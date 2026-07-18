@@ -1,4 +1,4 @@
-from agent_benchmark import BenchmarkScore, aggregate_scores
+from reliagent_bench import BenchmarkScore, aggregate_scores
 
 
 def test_aggregate_scores() -> None:

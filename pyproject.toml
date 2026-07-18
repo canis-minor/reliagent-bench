@@ -1,9 +1,15 @@
 [project]
-name = "agent-benchmark"
+name = "reliagent-bench"
 version = "0.1.0"
-description = "Reproducible benchmark for reliable AI agents"
+description = "ReliAgent Bench — reproducible reliability benchmark for tool-using, memory-enabled AI agents"
 requires-python = ">=3.11"
+authors = [{ name = "Ruxi", email = "ruxiz2018@gmail.com" }]
+license = "Apache-2.0"
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/canis-minor/reliagent-bench"
+Portfolio = "https://github.com/canis-minor/reliable-agent-stack"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.5"]
