@@ -1,10 +1,12 @@
+> This repository is part of the **[Reliable Long-Running Agents (RLRA)](https://github.com/canis-minor)** research initiative.
+
 # ReliAgent Bench
 
 **A reproducible reliability benchmark for long-running, tool-using, memory-enabled agents.**
 
 ![status: experimental](https://img.shields.io/badge/status-experimental-orange)
 
-> Part of the **[Reliable Agent Stack](https://github.com/canis-minor/reliable-agent-stack)** —
+> Siblings in the RLRA stack —
 > [TypedMem](https://github.com/canis-minor/typedmem) ·
 > [AgentCheck](https://github.com/canis-minor/agentcheck) ·
 > [AgentTrace](https://github.com/canis-minor/agenttrace) ·
