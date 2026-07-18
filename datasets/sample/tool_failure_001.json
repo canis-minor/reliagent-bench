@@ -1,0 +1,16 @@
+{
+  "id": "tool-failure-001",
+  "category": "failure_recovery",
+  "description": "The primary search tool fails once. The agent should retry or use a fallback.",
+  "turns": [
+    {"role": "user", "content": "Find the latest approved project status."}
+  ],
+  "checks": [
+    {"name": "task_success", "weight": 0.5},
+    {"name": "recovery", "weight": 0.5}
+  ],
+  "fault_injection": {
+    "tool": "search",
+    "failure_count": 1
+  }
+}
