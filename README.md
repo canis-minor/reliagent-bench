@@ -69,9 +69,10 @@ Every published result should include:
 
 A **v0 benchmark and reproducible demonstration** — not yet a definitive or
 general-purpose memory benchmark. It runs three arms — vector-only, vector +
-typed filters, and the full TypedMem pipeline — over **18 hand-labeled synthetic
-tasks**, so results are **preliminary**. Full details, results, examples, and
-limitations: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md);
+typed filters, and the full TypedMem pipeline — over **33 hand-labeled synthetic
+tasks across nine categories**, so results are **preliminary**. Full details,
+results, examples, and limitations:
+[`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md);
 a committed run is in [`src/reliagent_bench/memory/results/`](src/reliagent_bench/memory/results/).
 
 ```bash
@@ -82,9 +83,9 @@ python -m reliagent_bench.memory --k 5 --seed 0 --ablation
 
 **Narrow finding (not a general claim):** on the included temporal and
 state-evolution tasks, TypedMem's resolver takes stale-memory retrieval from 37%
-(vector) to **0%** and current-state accuracy from 33% to **78%** vs. the
+(vector) to **0%** and current-state accuracy from 30% to **85%** vs. the
 included internal baselines. Typed filtering also causes a **recall regression**
-(1.00 → 0.89) from v0 router over-filtering. Run against `typedmem` 0.8.0
+(1.00 → 0.91) from v0 router over-filtering. Run against `typedmem` 0.8.0
 (commit `14f54b5`), hashing embedder, k=5, seed=0.
 
 ## Quick start

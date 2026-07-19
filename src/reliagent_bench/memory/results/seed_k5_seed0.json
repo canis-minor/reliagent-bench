@@ -6,7 +6,7 @@
     "embedder_dim": 1024,
     "typedmem_version": "0.8.0",
     "dataset": "seed",
-    "num_tasks": 18,
+    "num_tasks": 33,
     "systems": [
       "vector",
       "vector_filter",
@@ -16,32 +16,32 @@
   "overall": {
     "vector": {
       "recall_at_k": 1.0,
-      "precision_at_k": 0.4907407407407407,
-      "mrr": 0.6666666666666666,
-      "ndcg_at_k": 0.7539531690476385,
-      "wrong_memory_rate": 0.5092592592592592,
-      "stale_memory_rate": 0.37037037037037035,
-      "current_state_accuracy": 0.3333333333333333,
+      "precision_at_k": 0.4525252525252525,
+      "mrr": 0.6424242424242425,
+      "ndcg_at_k": 0.7353729510850489,
+      "wrong_memory_rate": 0.5474747474747477,
+      "stale_memory_rate": 0.37171717171717167,
+      "current_state_accuracy": 0.30303030303030304,
       "entity_resolution": 1.0
     },
     "vector_filter": {
-      "recall_at_k": 0.8888888888888888,
-      "precision_at_k": 0.4351851851851852,
-      "mrr": 0.5833333333333334,
-      "ndcg_at_k": 0.6633459605158909,
-      "wrong_memory_rate": 0.45370370370370366,
-      "stale_memory_rate": 0.31481481481481477,
-      "current_state_accuracy": 0.2777777777777778,
+      "recall_at_k": 0.9090909090909091,
+      "precision_at_k": 0.42020202020202024,
+      "mrr": 0.5818181818181818,
+      "ndcg_at_k": 0.6668317538988998,
+      "wrong_memory_rate": 0.4888888888888889,
+      "stale_memory_rate": 0.3393939393939394,
+      "current_state_accuracy": 0.2727272727272727,
       "entity_resolution": 1.0
     },
     "typedmem": {
-      "recall_at_k": 0.8888888888888888,
-      "precision_at_k": 0.75,
-      "mrr": 0.8333333333333334,
-      "ndcg_at_k": 0.847881083730162,
-      "wrong_memory_rate": 0.1388888888888889,
+      "recall_at_k": 0.9090909090909091,
+      "precision_at_k": 0.7333333333333333,
+      "mrr": 0.8787878787878788,
+      "ndcg_at_k": 0.8867230153679672,
+      "wrong_memory_rate": 0.17575757575757575,
       "stale_memory_rate": 0.0,
-      "current_state_accuracy": 0.7777777777777778,
+      "current_state_accuracy": 0.8484848484848485,
       "entity_resolution": 1.0
     }
   },
@@ -50,20 +50,20 @@
       "vector": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.8333333333333334,
-        "ndcg_at_k": 0.8769765845238192,
+        "mrr": 0.875,
+        "ndcg_at_k": 0.9077324383928644,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
-        "current_state_accuracy": 0.6666666666666666
+        "current_state_accuracy": 0.75
       },
       "vector_filter": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.8333333333333334,
-        "ndcg_at_k": 0.8769765845238192,
+        "mrr": 0.875,
+        "ndcg_at_k": 0.9077324383928644,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
-        "current_state_accuracy": 0.6666666666666666
+        "current_state_accuracy": 0.75
       },
       "typedmem": {
         "recall_at_k": 1.0,
@@ -78,30 +78,30 @@
     "goal_evolution": {
       "vector": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.4444444444444444,
-        "mrr": 0.6666666666666666,
-        "ndcg_at_k": 0.7539531690476383,
-        "wrong_memory_rate": 0.5555555555555555,
-        "stale_memory_rate": 0.5555555555555555,
-        "current_state_accuracy": 0.3333333333333333
+        "precision_at_k": 0.4583333333333333,
+        "mrr": 0.75,
+        "ndcg_at_k": 0.8154648767857288,
+        "wrong_memory_rate": 0.5416666666666666,
+        "stale_memory_rate": 0.5416666666666666,
+        "current_state_accuracy": 0.5
       },
       "vector_filter": {
-        "recall_at_k": 0.6666666666666666,
-        "precision_at_k": 0.27777777777777773,
-        "mrr": 0.3333333333333333,
-        "ndcg_at_k": 0.420619835714305,
-        "wrong_memory_rate": 0.38888888888888884,
-        "stale_memory_rate": 0.38888888888888884,
-        "current_state_accuracy": 0.0
+        "recall_at_k": 0.75,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.5654648767857288,
+        "wrong_memory_rate": 0.41666666666666663,
+        "stale_memory_rate": 0.41666666666666663,
+        "current_state_accuracy": 0.25
       },
       "typedmem": {
-        "recall_at_k": 0.6666666666666666,
-        "precision_at_k": 0.6666666666666666,
-        "mrr": 0.6666666666666666,
-        "ndcg_at_k": 0.6666666666666666,
+        "recall_at_k": 0.75,
+        "precision_at_k": 0.75,
+        "mrr": 0.75,
+        "ndcg_at_k": 0.75,
         "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 0.6666666666666666
+        "current_state_accuracy": 0.75
       }
     },
     "decision_retrieval": {
@@ -111,7 +111,7 @@
         "mrr": 0.5,
         "ndcg_at_k": 0.6309297535714575,
         "wrong_memory_rate": 0.5,
-        "stale_memory_rate": 0.16666666666666666,
+        "stale_memory_rate": 0.25,
         "current_state_accuracy": 0.0
       },
       "vector_filter": {
@@ -120,17 +120,17 @@
         "mrr": 0.5,
         "ndcg_at_k": 0.6309297535714575,
         "wrong_memory_rate": 0.5,
-        "stale_memory_rate": 0.16666666666666666,
+        "stale_memory_rate": 0.25,
         "current_state_accuracy": 0.0
       },
       "typedmem": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.6666666666666666,
-        "mrr": 0.6666666666666666,
-        "ndcg_at_k": 0.7539531690476383,
-        "wrong_memory_rate": 0.3333333333333333,
+        "precision_at_k": 0.75,
+        "mrr": 0.75,
+        "ndcg_at_k": 0.8154648767857288,
+        "wrong_memory_rate": 0.25,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 0.3333333333333333
+        "current_state_accuracy": 0.5
       }
     },
     "temporal_updates": {
@@ -205,22 +205,109 @@
         "current_state_accuracy": 0.0
       },
       "vector_filter": {
-        "recall_at_k": 0.6666666666666666,
-        "precision_at_k": 0.3333333333333333,
-        "mrr": 0.3333333333333333,
-        "ndcg_at_k": 0.420619835714305,
-        "wrong_memory_rate": 0.3333333333333333,
-        "stale_memory_rate": 0.3333333333333333,
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.25,
+        "mrr": 0.25,
+        "ndcg_at_k": 0.31546487678572877,
+        "wrong_memory_rate": 0.25,
+        "stale_memory_rate": 0.25,
         "current_state_accuracy": 0.0
       },
       "typedmem": {
-        "recall_at_k": 0.6666666666666666,
-        "precision_at_k": 0.6666666666666666,
-        "mrr": 0.6666666666666666,
-        "ndcg_at_k": 0.6666666666666666,
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.5,
         "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 0.6666666666666666
+        "current_state_accuracy": 0.5
+      }
+    },
+    "long_history_retrieval": {
+      "vector": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.20000000000000004,
+        "mrr": 0.39999999999999997,
+        "ndcg_at_k": 0.5495707714591522,
+        "wrong_memory_rate": 0.8000000000000002,
+        "stale_memory_rate": 0.20000000000000004,
+        "current_state_accuracy": 0.0
+      },
+      "vector_filter": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2888888888888889,
+        "mrr": 0.39999999999999997,
+        "ndcg_at_k": 0.5495707714591522,
+        "wrong_memory_rate": 0.7111111111111111,
+        "stale_memory_rate": 0.2888888888888889,
+        "current_state_accuracy": 0.0
+      },
+      "typedmem": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.39999999999999997,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.6,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    "contradictions": {
+      "vector": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      },
+      "vector_filter": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      },
+      "typedmem": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    "cross_session": {
+      "vector": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.6666666666666666,
+        "ndcg_at_k": 0.7539531690476383,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.3333333333333333
+      },
+      "vector_filter": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.38888888888888884,
+        "mrr": 0.6666666666666666,
+        "ndcg_at_k": 0.7539531690476383,
+        "wrong_memory_rate": 0.611111111111111,
+        "stale_memory_rate": 0.38888888888888884,
+        "current_state_accuracy": 0.3333333333333333
+      },
+      "typedmem": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.3333333333333333,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
       }
     }
   },
@@ -1237,6 +1324,872 @@
         "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
         "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "pref-04",
+      "category": "preference_evolution",
+      "system": "vector",
+      "query": "What email client does the user prefer now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-04",
+      "category": "preference_evolution",
+      "system": "vector_filter",
+      "query": "What email client does the user prefer now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-04",
+      "category": "preference_evolution",
+      "system": "typedmem",
+      "query": "What email client does the user prefer now?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-04",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user's current career goal?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-04",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user's current career goal?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-04",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user's current career goal?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-04",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "What cloud provider did the user ultimately choose?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-04",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "What cloud provider did the user ultimately choose?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-04",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "What cloud provider did the user ultimately choose?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-04",
+      "category": "temporal_updates",
+      "system": "vector",
+      "query": "What is the current version of the app?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-04",
+      "category": "temporal_updates",
+      "system": "vector_filter",
+      "query": "What is the current version of the app?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-04",
+      "category": "temporal_updates",
+      "system": "typedmem",
+      "query": "What is the current version of the app?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "ent-04",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "What is Python the programming language known for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-04",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "What is Python the programming language known for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-04",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "What is Python the programming language known for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "stat-04",
+      "category": "status_tracking",
+      "system": "vector",
+      "query": "What is the current status of the gym membership?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-04",
+      "category": "status_tracking",
+      "system": "vector_filter",
+      "query": "What is the current status of the gym membership?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-04",
+      "category": "status_tracking",
+      "system": "typedmem",
+      "query": "What is the current status of the gym membership?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-01",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "What is the user's current job title?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d5",
+        "d1",
+        "d2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-01",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "What is the user's current job title?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-01",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "What is the user's current job title?",
+      "retrieved_ids": [
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "lhist-02",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "Where does the user currently live?",
+      "retrieved_ids": [
+        "d1",
+        "m1",
+        "d3",
+        "d2",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-02",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "Where does the user currently live?",
+      "retrieved_ids": [
+        "d1",
+        "m1",
+        "d3",
+        "d2",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-02",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "Where does the user currently live?",
+      "retrieved_ids": [
+        "m2",
+        "d1",
+        "d3",
+        "d2",
+        "d4"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "lhist-03",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "What is the user's current role on the team?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1",
+        "d3",
+        "d2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-03",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "What is the user's current role on the team?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-03",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "What is the user's current role on the team?",
+      "retrieved_ids": [
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-01",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "What day is the team meeting scheduled for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-01",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "What day is the team meeting scheduled for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-01",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "What day is the team meeting scheduled for?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-02",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "What is the project deadline?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-02",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "What is the project deadline?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-02",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "What is the project deadline?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-03",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "Does the user eat meat?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-03",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "Does the user eat meat?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-03",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "Does the user eat meat?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-01",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "What web framework did the user settle on?",
+      "retrieved_ids": [
+        "m2",
+        "m1",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-01",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "What web framework did the user settle on?",
+      "retrieved_ids": [
+        "m2",
+        "m1",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-01",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "What web framework did the user settle on?",
+      "retrieved_ids": [
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-02",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "What is the user's current blood pressure medication?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-02",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "What is the user's current blood pressure medication?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-02",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "What is the user's current blood pressure medication?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-03",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "Which city is the user relocating to?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-03",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "Which city is the user relocating to?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-03",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "Which city is the user relocating to?",
+      "retrieved_ids": [
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
       }
     }
   ]

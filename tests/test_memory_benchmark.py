@@ -7,13 +7,15 @@ from reliagent_bench.memory.dataset import build_store
 
 def test_seed_dataset_loads():
     tasks = load_tasks()
-    assert len(tasks) >= 12
+    assert len(tasks) >= 30
     categories = {t.category for t in tasks}
     assert categories == {
         "preference_evolution", "goal_evolution", "decision_retrieval",
         "temporal_updates", "entity_disambiguation", "status_tracking",
+        "long_history_retrieval", "contradictions", "cross_session",
     }
-    # Every task's labels reference real memory ids.
+    # Task ids are unique, and every label references a real memory id.
+    assert len({t.id for t in tasks}) == len(tasks)
     for t in tasks:
         ids = {m["id"] for m in t.memories}
         assert set(t.relevant_ids) <= ids
