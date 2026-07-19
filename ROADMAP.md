@@ -5,6 +5,9 @@ Done:
 - [x] Memory track: three arms (vector / vector+filter / typedmem) + ablation + metrics
 - [x] Reproducible runner (deterministic, records config + seed, keeps per-query results)
 - [x] Committed results artifact (`memory/results/`)
+- [x] Structured per-task metadata + difficulty levels
+- [x] Classified failure analysis (router/embedding/temporal/entity/ranking) + stage contribution
+- [x] Versioned benchmark history with commit hashes (`analysis/`)
 
 Memory track, separated by concern (v0 is a demonstration, not a definitive benchmark):
 

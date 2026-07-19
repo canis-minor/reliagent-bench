@@ -69,9 +69,11 @@ Every published result should include:
 
 A **v0 benchmark and reproducible demonstration** — not yet a definitive or
 general-purpose memory benchmark. It runs three arms — vector-only, vector +
-typed filters, and the full TypedMem pipeline — over **33 hand-labeled synthetic
-tasks across nine categories**, so results are **preliminary**. Full details,
-results, examples, and limitations:
+typed filters, and the full TypedMem pipeline — over **42 hand-labeled synthetic
+tasks across nine categories** (target ~100), with structured per-task metadata,
+difficulty levels, classified failure analysis, and versioned run history under
+[`analysis/`](analysis/). Results are **preliminary**. Full details, results,
+examples, and limitations:
 [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md);
 a committed run is in [`src/reliagent_bench/memory/results/`](src/reliagent_bench/memory/results/).
 
@@ -83,10 +85,12 @@ python -m reliagent_bench.memory --k 5 --seed 0 --ablation
 
 **Narrow finding (not a general claim):** on the included temporal and
 state-evolution tasks, TypedMem's resolver takes stale-memory retrieval from 37%
-(vector) to **0%** and current-state accuracy from 30% to **85%** vs. the
+(vector) to **0%** and current-state accuracy from 31% to **86%** vs. the
 included internal baselines. Typed filtering also causes a **recall regression**
-(1.00 → 0.91) from v0 router over-filtering. Run against `typedmem` 0.8.0
-(commit `14f54b5`), hashing embedder, k=5, seed=0.
+(0.98 → 0.90) from v0 router over-filtering — and the classified failure analysis
+attributes **4 of 6** TypedMem failures to the router, pointing the next
+milestone there. Run against `typedmem` 0.8.0 (commit `14f54b5`), hashing
+embedder, k=5, seed=0.
 
 ## Quick start
 

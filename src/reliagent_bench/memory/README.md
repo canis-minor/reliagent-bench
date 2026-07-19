@@ -4,10 +4,10 @@
 return more correct memories than *vector-only* retrieval?
 
 This is a **v0 benchmark and reproducible demonstration** — **not** a definitive
-or general-purpose memory benchmark. The dataset is **33 hand-labeled synthetic
-tasks across nine categories**, so every number here is **preliminary**. We do
-**not** claim TypedMem outperforms vector-memory systems in general. The narrow,
-supported finding is:
+or general-purpose memory benchmark. The dataset is **42 hand-labeled synthetic
+tasks across nine categories** (target: ~100), so every number here is
+**preliminary**. We do **not** claim TypedMem outperforms vector-memory systems
+in general. The narrow, supported finding is:
 
 > On the included temporal and state-evolution tasks, TypedMem's temporal
 > **resolver eliminates stale-memory retrieval and improves current-state
@@ -42,13 +42,13 @@ lives in [`results/`](results/) so you can see the evidence without running.
 [`14f54b5`](https://github.com/canis-minor/typedmem/commit/14f54b5) ·
 embedder `hashing:dim=1024;ngram=2` · k=5 · seed=0.
 
-## Results (seed dataset, 33 tasks, k=5, seed=0)
+## Results (seed dataset, 42 tasks, k=5, seed=0)
 
 | System | Recall@5 | Prec@5 | MRR | NDCG | Wrong-rate ↓ | Stale-rate ↓ | Cur-state ↑ |
 |---|---|---|---|---|---|---|---|
-| vector | **1.00** | 0.45 | 0.64 | 0.74 | 0.55 | 0.37 | 0.30 |
-| vector_filter | 0.91 | 0.42 | 0.58 | 0.67 | 0.49 | 0.34 | 0.27 |
-| typedmem | 0.91 | **0.73** | **0.88** | **0.89** | **0.18** | **0.00** | **0.85** |
+| vector | **0.98** | 0.45 | 0.64 | 0.72 | 0.55 | 0.37 | 0.31 |
+| vector_filter | 0.90 | 0.43 | 0.58 | 0.67 | 0.48 | 0.34 | 0.29 |
+| typedmem | 0.90 | **0.74** | **0.88** | **0.89** | **0.17** | **0.00** | **0.86** |
 
 Note the **recall regression** (1.00 → 0.91): typed filtering is not free. The v0
 router's broad `what is → fact` rule mis-routes some goal/status queries and the
@@ -59,15 +59,15 @@ real, benchmark-surfaced cost — reported, not hidden.
 
 | Category | vector | vector_filter | typedmem |
 |---|---|---|---|
-| preference_evolution | 1.00 / 0.50 / 0.75 | 1.00 / 0.50 / 0.75 | 1.00 / **0.00** / **1.00** |
-| goal_evolution | 1.00 / 0.54 / 0.50 | 0.75 / 0.42 / 0.25 | 0.75 / **0.00** / 0.75 |
-| decision_retrieval | 1.00 / 0.25 / 0.00 | 1.00 / 0.25 / 0.00 | 1.00 / **0.00** / 0.50 |
-| temporal_updates | 1.00 / 0.50 / 0.00 | 1.00 / 0.50 / 0.00 | 1.00 / **0.00** / **1.00** |
-| entity_disambiguation | 1.00 / 0.00 / 1.00 | 1.00 / 0.00 / 1.00 | 1.00 / 0.00 / 1.00 |
-| status_tracking | 1.00 / 0.50 / 0.00 | 0.50 / 0.25 / 0.00 | 0.50 / **0.00** / 0.50 |
-| long_history_retrieval | 1.00 / 0.20 / 0.00 | 1.00 / 0.29 / 0.00 | 1.00 / **0.00** / **1.00** |
+| preference_evolution | 1.00 / 0.50 / 0.80 | 1.00 / 0.50 / 0.80 | 1.00 / **0.00** / **1.00** |
+| goal_evolution | 1.00 / 0.53 / 0.40 | 0.80 / 0.43 / 0.20 | 0.80 / **0.00** / 0.80 |
+| decision_retrieval | 1.00 / 0.30 / 0.00 | 1.00 / 0.30 / 0.00 | 1.00 / **0.00** / 0.60 |
+| temporal_updates | 1.00 / 0.40 / 0.20 | 1.00 / 0.40 / 0.20 | 1.00 / **0.00** / **1.00** |
+| entity_disambiguation | 1.00 / 0.07 / 1.00 | 1.00 / 0.07 / 1.00 | 1.00 / **0.00** / 1.00 |
+| status_tracking | 1.00 / 0.50 / 0.00 | 0.40 / 0.20 / 0.00 | 0.40 / **0.00** / 0.40 |
+| long_history_retrieval | 0.75 / 0.20 / 0.00 | 1.00 / 0.28 / 0.00 | 1.00 / **0.00** / **1.00** |
 | contradictions | 1.00 / 0.50 / 0.00 | 1.00 / 0.50 / 0.00 | 1.00 / **0.00** / **1.00** |
-| cross_session | 1.00 / 0.33 / 0.33 | 1.00 / 0.39 / 0.33 | 1.00 / **0.00** / **1.00** |
+| cross_session | 1.00 / 0.33 / 0.25 | 1.00 / 0.42 / 0.25 | 1.00 / **0.00** / **1.00** |
 
 The **ablation** (`--ablation`) attributes the gains to the **resolver**: adding
 it alone takes stale-rate to 0 and lifts current-state accuracy sharply. The new
@@ -86,9 +86,31 @@ v0 has no entity linking.
 - `goal-03` — *"What is the user currently saving money for?"* typedmem returns **`[]`**: the router maps `what is` → `fact`, and the type filter removes the goal-typed memories entirely. Router over-filtering — the same rule empties `stat-03` and `stat-04`.
 - `dec-01` — *"Why did the user reject the Espresso Inc offer?"* typedmem returns both decision memories but ranks the neutral *"Considered the offer"* above *"Rejected … because the salary was below market"* — a ranking miss on the weak hashing embedder.
 
+## Analysis (v1.1): metadata, difficulty & failure classification
+
+Run with `--save-analysis` to write versioned artifacts under
+[`../../../analysis/`](../../../analysis/) — history records (with benchmark /
+dataset / TypedMem versions + commit hashes + config + seed + metrics),
+per-category improvement tables, and a classified failure report — so results are
+comparable across versions and engineering is driven by evidence.
+
+- **Structured metadata.** Every task carries `difficulty` (easy / medium /
+  hard), `required_capabilities`, `expected_memory_type`, and
+  `requires_{temporal,entity,conflict}_resolution` — spelled out in the JSONL or
+  derived from task shape.
+- **Failure taxonomy.** Each TypedMem failure is traced through the public stages
+  and labeled `router` / `embedding` / `temporal` / `entity` / `ranking` /
+  `unknown`, with a root cause and a candidate fix; the runner summarizes counts
+  by type and by stage.
+
+**Current failure breakdown (42 tasks):** 6 TypedMem failures — **4 `router`**
+(the `what is → fact` over-filtering) and **2 `ranking`**; zero embedding /
+temporal / entity. That evidence — not intuition — points the next milestone at
+the router.
+
 ## Limitations
 
-- **Dataset size.** 33 tasks — a step toward the 100-task target, still small.
+- **Dataset size.** 42 tasks — a step toward the ~100-task target, still small.
   Enough to demonstrate the harness and produce directional signal; **not** enough
   for statistical claims. Treat all numbers as preliminary.
 - **Synthetic data.** Every task is hand-authored, not drawn from real

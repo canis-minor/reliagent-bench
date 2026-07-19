@@ -22,6 +22,15 @@ from typedmem import InMemoryStore, Memory, Transition
 DATASETS_DIR = Path(__file__).resolve().parent / "datasets"
 DEFAULT_DATASET = DATASETS_DIR / "seed.jsonl"
 
+# Bump when the dataset's shape or contents change materially. Recorded in the
+# benchmark history so results can be compared across dataset versions.
+DATASET_VERSION = "0.2"
+
+_TEMPORAL_CATEGORIES = {
+    "preference_evolution", "goal_evolution", "temporal_updates",
+    "status_tracking", "contradictions", "cross_session",
+}
+
 
 @dataclass
 class MemoryTask:
@@ -36,6 +45,17 @@ class MemoryTask:
     as_of: str | None = None
     notes: str = ""
 
+    # v1.1 structured metadata. Any field left None is derived from task shape
+    # (see ``metadata``), so every task has full metadata whether or not the
+    # JSONL spells it out.
+    difficulty: str | None = None
+    required_capabilities: list[str] = field(default_factory=list)
+    expected_memory_type: str | None = None
+    requires_temporal_resolution: bool | None = None
+    requires_entity_resolution: bool | None = None
+    requires_conflict_resolution: bool | None = None
+    description: str = ""
+
     @property
     def relevant(self) -> set[str]:
         return set(self.relevant_ids)
@@ -43,6 +63,65 @@ class MemoryTask:
     @property
     def stale(self) -> set[str]:
         return set(self.stale_ids)
+
+    def _distractors(self) -> int:
+        return max(0, len(self.memories) - len(self.relevant) - len(self.stale))
+
+    def eff_requires_temporal(self) -> bool:
+        if self.requires_temporal_resolution is not None:
+            return self.requires_temporal_resolution
+        return bool(self.stale_ids) or any(m.get("superseded_by") for m in self.memories)
+
+    def eff_requires_entity(self) -> bool:
+        if self.requires_entity_resolution is not None:
+            return self.requires_entity_resolution
+        return self.expected_entity is not None
+
+    def eff_requires_conflict(self) -> bool:
+        if self.requires_conflict_resolution is not None:
+            return self.requires_conflict_resolution
+        return self.category == "contradictions"
+
+    def eff_expected_memory_type(self) -> str | None:
+        if self.expected_memory_type:
+            return self.expected_memory_type
+        types = [m["type"] for m in self.memories if m["id"] in self.relevant]
+        return types[0] if types else None
+
+    def eff_difficulty(self) -> str:
+        if self.difficulty:
+            return self.difficulty
+        if len(self.memories) >= 6 or self.category in ("long_history_retrieval", "cross_session"):
+            return "hard"
+        if self.eff_requires_temporal() or self.eff_requires_entity() or self._distractors() > 0:
+            return "medium"
+        return "easy"
+
+    def eff_capabilities(self) -> list[str]:
+        if self.required_capabilities:
+            return self.required_capabilities
+        caps = [self.category]
+        if self.eff_requires_temporal():
+            caps.append("temporal")
+        if self.eff_requires_entity():
+            caps.append("entity")
+        if self.eff_requires_conflict():
+            caps.append("conflict")
+        return caps
+
+    def metadata(self) -> dict:
+        """Full structured metadata (explicit fields, else derived)."""
+        return {
+            "id": self.id,
+            "category": self.category,
+            "difficulty": self.eff_difficulty(),
+            "required_capabilities": self.eff_capabilities(),
+            "expected_memory_type": self.eff_expected_memory_type(),
+            "requires_temporal_resolution": self.eff_requires_temporal(),
+            "requires_entity_resolution": self.eff_requires_entity(),
+            "requires_conflict_resolution": self.eff_requires_conflict(),
+            "description": self.description,
+        }
 
 
 def _parse_ts(value: str | None) -> datetime:
