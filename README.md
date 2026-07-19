@@ -67,15 +67,15 @@ Every published result should include:
 
 ## Memory retrieval track (v0)
 
-A **v0 benchmark and reproducible demonstration** — not yet a definitive or
-general-purpose memory benchmark. It runs three arms — vector-only, vector +
-typed filters, and the full TypedMem pipeline — over **82 hand-labeled synthetic
-tasks across eleven categories** (target ~100), with structured per-task
+A **v0 benchmark and reproducible demonstration**, **frozen as ReliAgent Bench
+v1.0** — not a definitive or general-purpose memory benchmark. It runs three arms
+— vector-only, vector + typed filters, and the full TypedMem pipeline — over
+**104 hand-labeled synthetic tasks across twelve categories**, with structured
 metadata, difficulty levels, classified failure analysis, a router experiment,
 Oracle-gap validation, and versioned run history under [`analysis/`](analysis/).
-Results are **preliminary**. Full details, results, examples, and limitations:
-[`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md);
-a committed run is in [`src/reliagent_bench/memory/results/`](src/reliagent_bench/memory/results/).
+Results are **preliminary**. **Specification:** [`docs/benchmark.md`](docs/benchmark.md)
+(+ [`metrics.md`](docs/metrics.md), [`annotation.md`](docs/annotation.md)). Track
+details: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
 
 ```bash
 pip install -e .                                 # pulls in typedmem>=0.8.0
@@ -84,14 +84,15 @@ python -m reliagent_bench.memory --k 5 --seed 0 --ablation
 ```
 
 **Narrow finding (not a general claim):** on the included temporal and
-state-evolution tasks, TypedMem's resolver takes stale-memory retrieval from 37%
-(vector) to **0%** and current-state accuracy from 35% to **79%** vs. the
+state-evolution tasks, TypedMem's resolver takes stale-memory retrieval from 36%
+(vector) to **0%** and current-state accuracy from 38% to **77%** vs. the
 included internal baselines. Typed filtering causes a **recall regression**
-(0.99 → 0.83) from router over-filtering. The v1.3 validation (82 tasks) shows
-**Rule + Global Fallback matches the Oracle ceiling (current-state gap +0.00)** —
-so routing is effectively solved by the fallback and an **LLM router is not yet
-justified** (decision: freeze routing, move to external baselines). Run against
-`typedmem` 0.8.0 (commit `14f54b5`), hashing embedder, k=5, seed=0.
+(0.99 → 0.79) from router over-filtering. Validation across three versions
+(42 → 82 → 104 tasks) shows **Rule + Global Fallback matches the Oracle ceiling
+(current-state gap +0.00)** throughout — so routing is effectively solved by the
+fallback and an **LLM router is not justified** (decision: freeze routing, move to
+external baselines). Run against `typedmem` 0.8.0 (commit `14f54b5`), hashing
+embedder, k=5, seed=0.
 
 ## Quick start
 

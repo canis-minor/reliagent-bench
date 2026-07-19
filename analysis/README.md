@@ -29,12 +29,13 @@ and labeled: `router` (type filter dropped the relevant memory), `embedding`
 `entity` (wrong entity on top), `ranking` (retrieved but ranked too low),
 `unknown`.
 
-## Current top-line finding (bench 1.3 · dataset 0.3 · typedmem 0.8.0 @ 14f54b5)
+## Current top-line finding (ReliAgent Bench v1.0 · dataset 1.0 · typedmem 0.8.0 @ 14f54b5)
 
-82 tasks, k=5, seed=0. TypedMem current-state accuracy **0.79** vs. vector
-**0.35**; stale-rate **0.00** vs. **0.37**. Of TypedMem's **17** failures,
-**14 are `router`** (82%), 2 `ranking`, 1 `entity` — zero embedding/temporal.
-The **v1.3 validation** shows **Rule + Global Fallback ≈ Oracle** (current-state
-gap **+0.00** on the held-out eval set): routing is effectively solved by the
-fallback, so an LLM router is **not** justified yet (decision **Case A** — freeze
-routing, move to external baselines).
+104 tasks, k=5, seed=0. TypedMem current-state accuracy **0.77** vs. vector
+**0.38**; stale-rate **0.00** vs. **0.36**. Of TypedMem's **24** failures,
+**21 are `router`** (88%), 2 `ranking`, 1 `entity` — zero embedding/temporal.
+Validation across three versions (42 → 82 → 104 tasks) shows **Rule + Global
+Fallback ≈ Oracle** (current-state gap **+0.00** on the held-out eval set)
+throughout: routing is effectively solved by the fallback, so an LLM router is
+**not** justified (decision **Case A** — freeze routing, move to external
+baselines).

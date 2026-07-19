@@ -5,9 +5,21 @@ from reliagent_bench.memory.baselines import ABLATION_SYSTEMS
 from reliagent_bench.memory.dataset import build_store
 
 
+def test_frozen_manifest_matches():
+    """ReliAgent Bench v1.0 freeze guard: the loaded dataset must match the
+    committed FROZEN_MANIFEST.json exactly. Any change to the frozen v1.0 dataset
+    (tasks, ids, content) fails here — changes require a new dataset version."""
+    import json
+
+    from reliagent_bench.memory.dataset import FROZEN_MANIFEST, dataset_fingerprint
+
+    committed = json.loads(FROZEN_MANIFEST.read_text())
+    assert dataset_fingerprint() == committed
+
+
 def test_seed_dataset_loads():
     tasks = load_tasks()
-    assert len(tasks) >= 80
+    assert len(tasks) >= 100
     categories = {t.category for t in tasks}
     required = {
         "preference_evolution", "goal_evolution", "decision_retrieval",

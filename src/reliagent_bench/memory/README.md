@@ -3,12 +3,18 @@
 **Research question:** on memory that changes over time, does *typed* retrieval
 return more correct memories than *vector-only* retrieval?
 
+> **Frozen as ReliAgent Bench v1.0.** Full specification, methodology, metric
+> math, and annotation rules are in [`../../../docs/benchmark.md`](../../../docs/benchmark.md)
+> (see also [`metrics.md`](../../../docs/metrics.md), [`annotation.md`](../../../docs/annotation.md)).
+> The dataset is pinned by [`datasets/FROZEN_MANIFEST.json`](datasets/FROZEN_MANIFEST.json);
+> changes create a new version, not edits to v1.0.
+
 This is a **v0 benchmark and reproducible demonstration** — **not** a definitive
-or general-purpose memory benchmark. The dataset is **82 hand-labeled synthetic
-tasks across eleven categories** (target: ~100, including routing-stress
-categories `implicit_goal` and `mixed_type`), so every number here is
-**preliminary**. We do **not** claim TypedMem outperforms vector-memory systems
-in general. The narrow, supported finding is:
+or general-purpose memory benchmark. The dataset is **104 hand-labeled synthetic
+tasks across twelve categories** (incl. routing-stress categories `implicit_goal`,
+`implicit_decision`, `mixed_type`), so every number here is **preliminary**. We do
+**not** claim TypedMem outperforms vector-memory systems in general. The narrow,
+supported finding is:
 
 > On the included temporal and state-evolution tasks, TypedMem's temporal
 > **resolver eliminates stale-memory retrieval and improves current-state
@@ -43,17 +49,17 @@ lives in [`results/`](results/) so you can see the evidence without running.
 [`14f54b5`](https://github.com/canis-minor/typedmem/commit/14f54b5) ·
 embedder `hashing:dim=1024;ngram=2` · k=5 · seed=0.
 
-## Results (seed dataset, 82 tasks, k=5, seed=0)
+## Results (v1.0 dataset, 104 tasks, k=5, seed=0)
 
 | System | Recall@5 | Prec@5 | MRR | NDCG | Wrong-rate ↓ | Stale-rate ↓ | Cur-state ↑ |
 |---|---|---|---|---|---|---|---|
-| vector | **0.99** | 0.47 | 0.66 | 0.75 | 0.53 | 0.37 | 0.35 |
-| vector_filter | 0.83 | 0.40 | 0.56 | 0.63 | 0.43 | 0.30 | 0.30 |
-| typedmem | 0.83 | **0.67** | **0.81** | **0.82** | **0.16** | **0.00** | **0.79** |
+| vector | **0.99** | 0.48 | 0.68 | 0.76 | 0.52 | 0.36 | 0.38 |
+| vector_filter | 0.79 | 0.40 | 0.55 | 0.61 | 0.40 | 0.28 | 0.32 |
+| typedmem | 0.79 | **0.66** | **0.78** | **0.78** | **0.14** | **0.00** | **0.77** |
 
-The recall gap (0.99 → 0.83) widened as v1.3 added routing-stress tasks — that is
-the router over-filtering, quantified. Full per-category numbers are in the
-committed run at [`results/seed_report.md`](results/seed_report.md).
+The recall gap (0.99 → 0.79) is the router over-filtering, quantified — it grew as
+routing-stress tasks were added. Full per-category numbers are in the committed
+run at [`results/seed_report.md`](results/seed_report.md).
 
 Note the **recall regression** (1.00 → 0.91): typed filtering is not free. The v0
 router's broad `what is → fact` rule mis-routes some goal/status queries and the
@@ -153,22 +159,21 @@ python -m reliagent_bench.memory --validate --k 5 --seed 0 [--save-analysis]
 ```
 
 **Oracle Gap on the held-out eval set (current-state accuracy):** A hard rule
-**+0.15**, C soft **+0.15**, B none **+0.00**, **D rule+fallback +0.00**. **Failure
-distribution (typedmem):** router **82%** (14/17), ranking 12%, entity 6%.
-**Stability (v1.1→v1.3):** 42→82 tasks, stale-rate stays 0.00, router the dominant
-failure throughout (67% → 82%).
+**+0.19**, C soft **+0.19**, B none **+0.00**, **D rule+fallback +0.00**. **Failure
+distribution (typedmem):** router **88%** (21/24), ranking 8%, entity 4%.
+**Stability across three versions** (42 → 82 → 104 tasks): stale-rate stays 0.00,
+router the dominant failure throughout (67% → 82% → 88%), D ≈ Oracle throughout.
 
-**Decision — Case A:** `Rule + Global Fallback ≈ Oracle` (current-state gap
-+0.00), so **routing is effectively solved by the fallback** — an LLM router is
-**not** justified by the evidence. Freeze routing research; next up is external
-baselines (Mem0 / LangMem / Zep). Committed report:
+**Decision — Case A (confirmed at v1.0 scale):** `Rule + Global Fallback ≈ Oracle`
+(current-state gap +0.00), so **routing is effectively solved by the fallback** —
+an LLM router is **not** justified by the evidence. Freeze routing research; next
+up is external baselines (Mem0 / LangMem / Zep). Committed report:
 [`../../../analysis/validation_reports/`](../../../analysis/validation_reports/).
-(Still preliminary — eval set is 26 tasks; the conclusion should be re-confirmed
-nearer 100.)
 
 ## Limitations
 
-- **Dataset size.** 82 tasks — a step toward the ~100-task target, still small.
+- **Dataset size.** 104 tasks (frozen v1.0) — enough to demonstrate the harness
+  and produce directional signal; still small for statistical claims.
   Enough to demonstrate the harness and produce directional signal; **not** enough
   for statistical claims. Treat all numbers as preliminary.
 - **Synthetic data.** Every task is hand-authored, not drawn from real

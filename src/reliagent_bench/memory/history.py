@@ -23,7 +23,9 @@ import typedmem
 from .analysis import failure_summary
 from .dataset import DATASET_VERSION
 
-BENCHMARK_VERSION = "1.3"
+# FROZEN benchmark release. Prior values (1.1, 1.3) were development-milestone
+# tags; 1.0 is the first frozen ReliAgent Bench release (v1.4 design milestone).
+BENCHMARK_VERSION = "1.0"
 
 # repo root = .../reliagent-bench (dataset.py lives at src/reliagent_bench/memory/)
 REPO_ROOT = Path(__file__).resolve().parents[3]

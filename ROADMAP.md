@@ -9,8 +9,8 @@ Done:
 - [x] Classified failure analysis (router/embedding/temporal/entity/ranking) + stage contribution
 - [x] Versioned benchmark history with commit hashes (`analysis/`)
 - [x] Router experiment harness: variants A–F + Oracle, injected via public stages (TypedMem unchanged), dev/eval split, router metrics, matrix report
-- [x] Validation at scale (82 tasks): Oracle Gap, failure distribution, cross-version stability, data-driven decision
-- [x] Dataset grown to 82 tasks across 11 categories (added implicit_goal, mixed_type routing-stress)
+- [x] Validation at scale: Oracle Gap, failure distribution, cross-version stability, data-driven decision
+- [x] **ReliAgent Bench v1.0 frozen** — 104 tasks / 12 categories, `FROZEN_MANIFEST.json` + freeze test, benchmark specification (`docs/benchmark.md`, `metrics.md`, `annotation.md`), validation re-confirmed at scale
 
 Memory track, separated by concern (v0 is a demonstration, not a definitive benchmark):
 

@@ -24,7 +24,9 @@ DEFAULT_DATASET = DATASETS_DIR / "seed.jsonl"
 
 # Bump when the dataset's shape or contents change materially. Recorded in the
 # benchmark history so results can be compared across dataset versions.
-DATASET_VERSION = "0.3"
+# FROZEN at 1.0 — see datasets/FROZEN_MANIFEST.json and docs/benchmark.md.
+# Future changes create a new version rather than modifying v1.0.
+DATASET_VERSION = "1.0"
 
 _TEMPORAL_CATEGORIES = {
     "preference_evolution", "goal_evolution", "temporal_updates",
@@ -172,3 +174,33 @@ def build_store(task: MemoryTask, *, workspace: str = "default") -> InMemoryStor
 def subject_map(task: MemoryTask) -> dict[str, str | None]:
     """id → subject, for entity-resolution scoring."""
     return {spec["id"]: spec.get("subject") for spec in task.memories}
+
+
+FROZEN_MANIFEST = DATASETS_DIR / "FROZEN_MANIFEST.json"
+
+
+def dataset_fingerprint(tasks: list[MemoryTask] | None = None) -> dict:
+    """A version + shape + content fingerprint of the frozen dataset. The
+    committed FROZEN_MANIFEST.json must match this; the freeze test enforces it,
+    so any accidental change to v1.0 is caught."""
+    import hashlib
+    from collections import Counter
+
+    tasks = tasks if tasks is not None else load_tasks()
+    ordered = sorted(tasks, key=lambda t: t.id)
+    canon = json.dumps(
+        [
+            {"id": t.id, "category": t.category, "query": t.query,
+             "memories": t.memories, "relevant_ids": t.relevant_ids,
+             "stale_ids": t.stale_ids, "expected_entity": t.expected_entity}
+            for t in ordered
+        ],
+        sort_keys=True, ensure_ascii=False,
+    )
+    return {
+        "dataset_version": DATASET_VERSION,
+        "num_tasks": len(tasks),
+        "categories": dict(sorted(Counter(t.category for t in tasks).items())),
+        "task_ids": [t.id for t in ordered],
+        "content_sha256": hashlib.sha256(canon.encode("utf-8")).hexdigest(),
+    }
