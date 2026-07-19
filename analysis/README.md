@@ -11,6 +11,7 @@ analysis/
     failure_reports/     every target-system failure, classified with a fix
     router_reports/      router experiment matrix (variants A-F + Oracle)
     validation_reports/  Oracle gap + failure distribution + stability + decision
+    comparison_reports/  cross-system leaderboard + failure heatmap + environment
     plots/               (reserved)
 ```
 

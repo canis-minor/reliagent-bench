@@ -43,6 +43,16 @@ from .routers import (
     SoftRuleRouter,
 )
 from .runner import BenchmarkResult, QueryResult, RunConfig, run_benchmark
+from .audit import AuditResult, render_audit, run_audit
+from .cross_system import (
+    Comparison,
+    SystemResult,
+    builtin_systems,
+    classify_failure,
+    render_comparison,
+    run_comparison,
+)
+from .external import available_external_names, available_systems
 from .validate import (
     Validation,
     decide,
@@ -73,13 +83,24 @@ __all__ = [
     "RunConfig",
     "SoftRuleRouter",
     "TypedMemRetriever",
+    "AuditResult",
+    "Comparison",
+    "SystemResult",
     "Validation",
     "VectorRetriever",
+    "available_external_names",
+    "available_systems",
     "build_history_record",
     "build_store",
+    "builtin_systems",
     "category_improvement",
+    "classify_failure",
     "decide",
     "default_variants",
+    "render_audit",
+    "render_comparison",
+    "run_audit",
+    "run_comparison",
     "diagnose",
     "diagnose_all",
     "evaluate_query",

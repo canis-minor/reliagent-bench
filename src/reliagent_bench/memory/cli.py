@@ -34,6 +34,9 @@ def main(argv: list[str] | None = None) -> None:
                    help="run the router experiment (variants A-D + Oracle) on a dev/eval split")
     p.add_argument("--validate", action="store_true",
                    help="run v1.3 validation: Oracle gap + failure distribution + stability + decision")
+    p.add_argument("--compare", action="store_true",
+                   help="cross-system comparison: built-in + any configured external systems (Mem0/LangMem/Zep)")
+    p.add_argument("--audit", action="store_true", help="Stage 0 benchmark audit (fairness / generality / reproducibility)")
     p.add_argument("--json", action="store_true", help="emit full per-query results as JSON")
     p.add_argument("--save-analysis", action="store_true",
                    help="write versioned history + category/failure reports under analysis/")
@@ -47,6 +50,15 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.validate:
         _run_validation(tasks, args)
+        return
+
+    if args.audit:
+        from .audit import render_audit, run_audit
+        print(render_audit(run_audit(tasks)))
+        return
+
+    if args.compare:
+        _run_compare(tasks, args)
         return
 
     systems = ABLATION_SYSTEMS if args.ablation else DEFAULT_SYSTEMS
@@ -98,6 +110,29 @@ def _run_router_matrix(tasks, args) -> None:
         path = out_dir / f"router_matrix_k{args.k}_seed{args.seed}.md"
         path.write_text(report, encoding="utf-8")
         print(f"\n_router matrix written to {path}_")
+
+
+def _run_compare(tasks, args) -> None:
+    import json
+
+    from .cross_system import render_comparison, run_comparison
+    from .external import available_external_names, available_systems
+    from .history import ANALYSIS_DIR
+
+    systems = available_systems()
+    c = run_comparison(systems, tasks, k=args.k, seed=args.seed, embedder_dim=args.dim)
+    print(render_comparison(c))
+    ext = available_external_names()
+    if not ext:
+        print("\n_(no external systems configured — ran built-in systems only. "
+              "Install mem0ai / langmem / zep-cloud and set API keys to include them.)_")
+    if args.save_analysis:
+        out = ANALYSIS_DIR / "comparison_reports"
+        out.mkdir(parents=True, exist_ok=True)
+        (out / f"comparison_k{args.k}_seed{args.seed}.md").write_text(render_comparison(c), encoding="utf-8")
+        (out / f"environment_k{args.k}_seed{args.seed}.json").write_text(
+            json.dumps(c.environment, indent=2), encoding="utf-8")
+        print(f"\n_comparison written to {out}_")
 
 
 def _run_validation(tasks, args) -> None:

@@ -1,0 +1,17 @@
+{
+  "benchmark_version": "1.0",
+  "dataset_version": "1.0",
+  "reliagent_commit": "bff60cc",
+  "typedmem_version": "0.8.0",
+  "python": "3.13.1",
+  "platform": "macOS-13.4-arm64-arm-64bit-Mach-O",
+  "embedder": "hashing:dim=1024;ngram=2",
+  "k": 5,
+  "seed": 0,
+  "external_packages": {
+    "mem0ai": null,
+    "langmem": null,
+    "zep-python": null,
+    "zep-cloud": null
+  }
+}

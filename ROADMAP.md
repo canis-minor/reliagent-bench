@@ -16,7 +16,7 @@ Memory track, separated by concern (v0 is a demonstration, not a definitive benc
 
 1. **Dataset expansion** — 82 hand-labeled tasks across 11 categories so far; grow toward ~100 → 250 → 500; real-embedder runs; held-out labels.
 2. **Router improvement** — v1.2/v1.3 (82 tasks) show **D (rule + global fallback) ≈ Oracle** (current-state gap +0.00); **B (no router)** matches, **C (soft top-N)** does not help. Decision **Case A**: routing is effectively solved by the fallback — **LLM routing (E/F) is NOT justified yet**. Adopting the fallback in TypedMem is the eventual change once re-confirmed nearer 100 tasks.
-3. **External baselines** (next active track, per Case A) — Mem0 / LangMem / Zep / Letta adapters on identical dataset / evaluator / metrics / top-k / embedding, after the harness stabilizes.
+3. **External baselines** (in progress, per Case A) — cross-system framework done: common `retrieve` interface, registry, Stage-0 audit, category leaderboard, system-agnostic failure heatmap, environment/repro metadata; Mem0 / LangMem / Zep adapters exist (`external.py`, optional-import, credential-gated). **Remaining:** actually run Mem0/LangMem/Zep (needs their packages + live services/keys) and commit the four-way comparison.
 4. **Real-conversation evaluation** — labeled memories mined from real multi-session transcripts.
 
 Agent track (separate):

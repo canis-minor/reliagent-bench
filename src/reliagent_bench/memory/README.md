@@ -170,6 +170,29 @@ an LLM router is **not** justified by the evidence. Freeze routing research; nex
 up is external baselines (Mem0 / LangMem / Zep). Committed report:
 [`../../../analysis/validation_reports/`](../../../analysis/validation_reports/).
 
+## Cross-system comparison (v1.5)
+
+The benchmark is architecture-neutral: any system implementing
+`retrieve(query, top_k) -> [memory_id]` can be compared on the same tasks,
+evaluator, and top-k. It produces a category leaderboard and a **system-agnostic
+failure heatmap** (stale / missed / entity / mis_ranked — computed from outputs,
+so it works for glass-box and black-box systems alike). Methodology:
+[`../../../docs/comparison.md`](../../../docs/comparison.md); Stage-0 audit:
+[`../../../docs/audit.md`](../../../docs/audit.md).
+
+```bash
+python -m reliagent_bench.memory --audit
+python -m reliagent_bench.memory --compare --k 5 --seed 0 --save-analysis
+```
+
+Built-in systems (104 tasks) already show the **architectural tradeoff**: vector
+never *misses* but surfaces stale memories 85×; **TypedMem drives stale to 0** (via
+temporal resolution) at the cost of 21 *missed* from router over-filtering — net
+failures 88 → 24. **External adapters** for Mem0 / LangMem / Zep exist behind the
+same interface (`external.py`, optional-import, credential-gated) but are **not run
+here** — each needs its package plus a live service / API key. The registry
+includes any configured system and skips the rest (never faked).
+
 ## Limitations
 
 - **Dataset size.** 104 tasks (frozen v1.0) — enough to demonstrate the harness
