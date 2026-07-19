@@ -96,6 +96,22 @@ fallback and an **LLM router is not justified** (decision: freeze routing, move 
 external baselines). Run against `typedmem` 0.8.0 (commit `14f54b5`), hashing
 embedder, k=5, seed=0.
 
+## Evaluation tracks (by representation)
+
+ReliAgent Bench is broadening from "benchmark memory systems" to **evaluate persistent
+agent representations** — held as independent tracks, since they answer different
+questions and carry different metrics (they are *not* one leaderboard):
+
+| Track | Representation | Question | Maturity |
+|---|---|---|---|
+| **A — Memory** | vector · Mem0 · LangMem · TypedMem | retrieves the right state? | **frozen v1.0** (above) |
+| **B — Operational provenance** | [AgentTrace](https://github.com/canis-minor/agenttrace) · LangSmith · OTel | reconstructs *what happened*? | design-stage |
+| **C — Semantic provenance** | [StateGraph](https://github.com/canis-minor/stategraph) · future systems | reconstructs *what was believed*? | design → [`docs/semantic-provenance-plan.md`](docs/semantic-provenance-plan.md) |
+
+The benchmark evaluates representations; it is not owned by any system it evaluates
+(GLUE is not part of BERT). Track A stays frozen; new tracks are added as separate
+suites. See [`docs/roadmap.md`](docs/roadmap.md).
+
 ## Quick start
 
 ```bash

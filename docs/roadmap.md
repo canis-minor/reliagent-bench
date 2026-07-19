@@ -25,3 +25,23 @@ Only the memory system varies.
 - Real-conversation evaluation (labeled memories mined from multi-session transcripts).
 - Real-embedder runs alongside the deterministic hashing embedder.
 - Public leaderboard protocol.
+
+## Evolving mission: benchmark *persistent agent representations*, not only memory
+
+ReliAgent Bench is broadening from "benchmark memory systems" to "evaluate persistent
+agent representations." These are not one leaderboard — they answer different questions
+and carry different metrics — so the benchmark holds multiple **tracks by
+representation**, each independent:
+
+| Track | Representation | Question | Metrics | Maturity |
+|---|---|---|---|---|
+| **A — Memory** | vector · Mem0 · LangMem · TypedMem | retrieves the right state? | recall / stale-rate / current-state acc. | **frozen v1.0** |
+| **B — Operational provenance** | AgentTrace · LangSmith · OTel | reconstructs *what happened*? | localization of operational faults | design-stage |
+| **C — Semantic provenance** | StateGraph · future systems | reconstructs *what was believed*? | localization / reproducibility / utility | design-stage → [`semantic-provenance-plan.md`](semantic-provenance-plan.md) |
+
+Principle: the benchmark evaluates representations; it is not owned by any system it
+evaluates (GLUE is not part of BERT). Track A stays frozen and backward-compatible;
+new tracks are added alongside as separate suites, never by unfreezing v1.0.
+
+Phasing: **1** Memory retrieval (done, frozen) → **2** Persistent state → **3**
+Operational provenance → **4** Semantic provenance. A long-lived benchmark, not a v2.
