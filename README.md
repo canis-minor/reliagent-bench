@@ -65,6 +65,24 @@ Every published result should include:
 - evaluator definition;
 - raw trace location.
 
+## Memory retrieval track (v0)
+
+The first working track: **does typed retrieval beat vector-only retrieval?** It
+runs three arms — vector-only, vector + typed filters, and the full TypedMem
+pipeline — over hand-labeled tasks and reports Recall/Precision/MRR/NDCG plus
+memory-specific stale-rate, wrong-rate, and current-state accuracy. See
+[`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
+
+```bash
+pip install -e .                      # pulls in typedmem>=0.8.0
+python -m reliagent_bench.memory      # 3-arm comparison
+python -m reliagent_bench.memory --ablation
+```
+
+Early result (illustrative, hashing embedder): temporal resolution takes
+stale-memory retrieval from 37% (vector) to 0% and current-state accuracy from
+33% to 78%.
+
 ## Quick start
 
 ```bash
@@ -74,8 +92,9 @@ python -c "from reliagent_bench import aggregate_scores"
 
 ## Status
 
-**Experimental.** Dataset schema, one sample task, and a scoring scaffold
-(`aggregate_scores`) exist. The reproducible runner, fault injection, the memory
-track, and the leaderboard protocol are not yet implemented. Task sets are meant
-to be executed via [AgentCheck](https://github.com/canis-minor/agentcheck) and
-traced with [AgentTrace](https://github.com/canis-minor/agenttrace).
+**Experimental.** The **memory retrieval track** is implemented (three arms,
+metrics, ablation, deterministic runner, per-query results, seed dataset). The
+agent-track dataset schema and scoring scaffold (`aggregate_scores`) exist;
+fault injection and the leaderboard protocol are not yet implemented. Task sets
+are meant to be executed via [AgentCheck](https://github.com/canis-minor/agentcheck)
+and traced with [AgentTrace](https://github.com/canis-minor/agenttrace).
