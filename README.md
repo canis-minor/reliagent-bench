@@ -67,21 +67,25 @@ Every published result should include:
 
 ## Memory retrieval track (v0)
 
-The first working track: **does typed retrieval beat vector-only retrieval?** It
-runs three arms — vector-only, vector + typed filters, and the full TypedMem
-pipeline — over hand-labeled tasks and reports Recall/Precision/MRR/NDCG plus
-memory-specific stale-rate, wrong-rate, and current-state accuracy. See
-[`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
+A **v0 benchmark and reproducible demonstration** — not yet a definitive or
+general-purpose memory benchmark. It runs three arms — vector-only, vector +
+typed filters, and the full TypedMem pipeline — over **18 hand-labeled synthetic
+tasks**, so results are **preliminary**. Full details, results, examples, and
+limitations: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md);
+a committed run is in [`src/reliagent_bench/memory/results/`](src/reliagent_bench/memory/results/).
 
 ```bash
-pip install -e .                      # pulls in typedmem>=0.8.0
-python -m reliagent_bench.memory      # 3-arm comparison
-python -m reliagent_bench.memory --ablation
+pip install -e .                                 # pulls in typedmem>=0.8.0
+python -m reliagent_bench.memory --k 5 --seed 0  # 3-arm comparison
+python -m reliagent_bench.memory --k 5 --seed 0 --ablation
 ```
 
-Early result (illustrative, hashing embedder): temporal resolution takes
-stale-memory retrieval from 37% (vector) to 0% and current-state accuracy from
-33% to 78%.
+**Narrow finding (not a general claim):** on the included temporal and
+state-evolution tasks, TypedMem's resolver takes stale-memory retrieval from 37%
+(vector) to **0%** and current-state accuracy from 33% to **78%** vs. the
+included internal baselines. Typed filtering also causes a **recall regression**
+(1.00 → 0.89) from v0 router over-filtering. Run against `typedmem` 0.8.0
+(commit `14f54b5`), hashing embedder, k=5, seed=0.
 
 ## Quick start
 
