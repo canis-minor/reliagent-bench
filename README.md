@@ -74,8 +74,9 @@ v1.0** — not a definitive or general-purpose memory benchmark. It runs three a
 metadata, difficulty levels, classified failure analysis, a router experiment,
 Oracle-gap validation, and versioned run history under [`analysis/`](analysis/).
 Results are **preliminary**. **Specification:** [`docs/benchmark.md`](docs/benchmark.md)
-(+ [`metrics.md`](docs/metrics.md), [`annotation.md`](docs/annotation.md)). Track
-details: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
+(+ [`metrics.md`](docs/metrics.md), [`annotation.md`](docs/annotation.md)).
+**Research notes / first-cycle analysis:** [`docs/research-notes.md`](docs/research-notes.md).
+Track details: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
 
 ```bash
 pip install -e .                                 # pulls in typedmem>=0.8.0
