@@ -32,6 +32,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--ablation", action="store_true", help="run the stage ablation, not the 3 arms")
     p.add_argument("--router-matrix", action="store_true",
                    help="run the router experiment (variants A-D + Oracle) on a dev/eval split")
+    p.add_argument("--validate", action="store_true",
+                   help="run v1.3 validation: Oracle gap + failure distribution + stability + decision")
     p.add_argument("--json", action="store_true", help="emit full per-query results as JSON")
     p.add_argument("--save-analysis", action="store_true",
                    help="write versioned history + category/failure reports under analysis/")
@@ -41,6 +43,10 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.router_matrix:
         _run_router_matrix(tasks, args)
+        return
+
+    if args.validate:
+        _run_validation(tasks, args)
         return
 
     systems = ABLATION_SYSTEMS if args.ablation else DEFAULT_SYSTEMS
@@ -92,6 +98,22 @@ def _run_router_matrix(tasks, args) -> None:
         path = out_dir / f"router_matrix_k{args.k}_seed{args.seed}.md"
         path.write_text(report, encoding="utf-8")
         print(f"\n_router matrix written to {path}_")
+
+
+def _run_validation(tasks, args) -> None:
+    from .history import ANALYSIS_DIR, write_history_record
+    from .validate import render_validation, run_validation
+
+    v = run_validation(tasks, k=args.k, seed=args.seed, embedder_dim=args.dim)
+    report = render_validation(v)
+    print(report)
+    if args.save_analysis:
+        write_history_record(v.history_record)
+        out_dir = ANALYSIS_DIR / "validation_reports"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        path = out_dir / f"validation_ds{v.dataset_version}_k{args.k}_seed{args.seed}.md"
+        path.write_text(report, encoding="utf-8")
+        print(f"\n_validation written to {path}; history record updated_")
 
 
 if __name__ == "__main__":

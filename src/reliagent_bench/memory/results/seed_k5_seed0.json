@@ -6,7 +6,7 @@
     "embedder_dim": 1024,
     "typedmem_version": "0.8.0",
     "dataset": "seed",
-    "num_tasks": 42,
+    "num_tasks": 82,
     "systems": [
       "vector",
       "vector_filter",
@@ -15,34 +15,34 @@
   },
   "overall": {
     "vector": {
-      "recall_at_k": 0.9761904761904762,
-      "precision_at_k": 0.45476190476190465,
-      "mrr": 0.6357142857142857,
-      "ndcg_at_k": 0.72433228937295,
-      "wrong_memory_rate": 0.5452380952380954,
-      "stale_memory_rate": 0.37222222222222223,
-      "current_state_accuracy": 0.30952380952380953,
-      "entity_resolution": 1.0
+      "recall_at_k": 0.9878048780487805,
+      "precision_at_k": 0.47195121951219526,
+      "mrr": 0.6634146341463415,
+      "ndcg_at_k": 0.7478072352809996,
+      "wrong_memory_rate": 0.5280487804878048,
+      "stale_memory_rate": 0.3747967479674796,
+      "current_state_accuracy": 0.35365853658536583,
+      "entity_resolution": 0.9
     },
     "vector_filter": {
-      "recall_at_k": 0.9047619047619048,
-      "precision_at_k": 0.42738095238095236,
-      "mrr": 0.5821428571428571,
-      "ndcg_at_k": 0.6657105583576886,
-      "wrong_memory_rate": 0.4773809523809524,
-      "stale_memory_rate": 0.3400793650793651,
-      "current_state_accuracy": 0.2857142857142857,
-      "entity_resolution": 1.0
+      "recall_at_k": 0.8292682926829268,
+      "precision_at_k": 0.4002032520325203,
+      "mrr": 0.5567073170731708,
+      "ndcg_at_k": 0.62733624774879,
+      "wrong_memory_rate": 0.42906504065040657,
+      "stale_memory_rate": 0.3006097560975609,
+      "current_state_accuracy": 0.3048780487804878,
+      "entity_resolution": 0.9
     },
     "typedmem": {
-      "recall_at_k": 0.9047619047619048,
-      "precision_at_k": 0.7388888888888888,
-      "mrr": 0.8809523809523809,
-      "ndcg_at_k": 0.8871871311224504,
-      "wrong_memory_rate": 0.16587301587301587,
+      "recall_at_k": 0.8292682926829268,
+      "precision_at_k": 0.6735772357723577,
+      "mrr": 0.8109756097560976,
+      "ndcg_at_k": 0.8157657226916388,
+      "wrong_memory_rate": 0.15569105691056911,
       "stale_memory_rate": 0.0,
-      "current_state_accuracy": 0.8571428571428571,
-      "entity_resolution": 1.0
+      "current_state_accuracy": 0.7926829268292683,
+      "entity_resolution": 0.9
     }
   },
   "per_category": {
@@ -50,20 +50,20 @@
       "vector": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.9,
-        "ndcg_at_k": 0.9261859507142916,
+        "mrr": 0.8333333333333334,
+        "ndcg_at_k": 0.8769765845238192,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
-        "current_state_accuracy": 0.8
+        "current_state_accuracy": 0.6666666666666666
       },
       "vector_filter": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.9,
-        "ndcg_at_k": 0.9261859507142916,
+        "mrr": 0.8333333333333334,
+        "ndcg_at_k": 0.8769765845238192,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
-        "current_state_accuracy": 0.8
+        "current_state_accuracy": 0.6666666666666666
       },
       "typedmem": {
         "recall_at_k": 1.0,
@@ -78,57 +78,57 @@
     "goal_evolution": {
       "vector": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.4666666666666666,
-        "mrr": 0.7,
-        "ndcg_at_k": 0.7785578521428744,
-        "wrong_memory_rate": 0.5333333333333333,
-        "stale_memory_rate": 0.5333333333333333,
-        "current_state_accuracy": 0.4
+        "precision_at_k": 0.4833333333333333,
+        "mrr": 0.65,
+        "ndcg_at_k": 0.7416508275000203,
+        "wrong_memory_rate": 0.5166666666666666,
+        "stale_memory_rate": 0.5166666666666666,
+        "current_state_accuracy": 0.3
       },
       "vector_filter": {
-        "recall_at_k": 0.8,
-        "precision_at_k": 0.36666666666666664,
-        "mrr": 0.5,
-        "ndcg_at_k": 0.5785578521428745,
-        "wrong_memory_rate": 0.4333333333333333,
-        "stale_memory_rate": 0.4333333333333333,
-        "current_state_accuracy": 0.2
+        "recall_at_k": 0.6,
+        "precision_at_k": 0.2833333333333333,
+        "mrr": 0.35,
+        "ndcg_at_k": 0.4154648767857288,
+        "wrong_memory_rate": 0.31666666666666665,
+        "stale_memory_rate": 0.31666666666666665,
+        "current_state_accuracy": 0.1
       },
       "typedmem": {
-        "recall_at_k": 0.8,
-        "precision_at_k": 0.8,
-        "mrr": 0.8,
-        "ndcg_at_k": 0.8,
+        "recall_at_k": 0.6,
+        "precision_at_k": 0.6,
+        "mrr": 0.6,
+        "ndcg_at_k": 0.6,
         "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 0.8
+        "current_state_accuracy": 0.6
       }
     },
     "decision_retrieval": {
       "vector": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.5,
-        "ndcg_at_k": 0.6309297535714575,
+        "mrr": 0.65,
+        "ndcg_at_k": 0.7416508275000203,
         "wrong_memory_rate": 0.5,
-        "stale_memory_rate": 0.3,
-        "current_state_accuracy": 0.0
+        "stale_memory_rate": 0.4,
+        "current_state_accuracy": 0.3
       },
       "vector_filter": {
-        "recall_at_k": 1.0,
-        "precision_at_k": 0.5,
+        "recall_at_k": 0.8,
+        "precision_at_k": 0.4,
         "mrr": 0.5,
-        "ndcg_at_k": 0.6309297535714575,
-        "wrong_memory_rate": 0.5,
+        "ndcg_at_k": 0.5785578521428746,
+        "wrong_memory_rate": 0.4,
         "stale_memory_rate": 0.3,
-        "current_state_accuracy": 0.0
+        "current_state_accuracy": 0.2
       },
       "typedmem": {
-        "recall_at_k": 1.0,
-        "precision_at_k": 0.8,
-        "mrr": 0.8,
-        "ndcg_at_k": 0.8523719014285831,
-        "wrong_memory_rate": 0.2,
+        "recall_at_k": 0.8,
+        "precision_at_k": 0.7,
+        "mrr": 0.7,
+        "ndcg_at_k": 0.7261859507142916,
+        "wrong_memory_rate": 0.1,
         "stale_memory_rate": 0.0,
         "current_state_accuracy": 0.6
       }
@@ -136,21 +136,21 @@
     "temporal_updates": {
       "vector": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.6,
-        "mrr": 0.6,
-        "ndcg_at_k": 0.704743802857166,
-        "wrong_memory_rate": 0.4,
-        "stale_memory_rate": 0.4,
-        "current_state_accuracy": 0.2
+        "precision_at_k": 0.5555555555555556,
+        "mrr": 0.6111111111111112,
+        "ndcg_at_k": 0.7129453638889115,
+        "wrong_memory_rate": 0.4444444444444444,
+        "stale_memory_rate": 0.4444444444444444,
+        "current_state_accuracy": 0.2222222222222222
       },
       "vector_filter": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.6,
-        "mrr": 0.6,
-        "ndcg_at_k": 0.704743802857166,
-        "wrong_memory_rate": 0.4,
-        "stale_memory_rate": 0.4,
-        "current_state_accuracy": 0.2
+        "precision_at_k": 0.5555555555555556,
+        "mrr": 0.6111111111111112,
+        "ndcg_at_k": 0.7129453638889115,
+        "wrong_memory_rate": 0.4444444444444444,
+        "stale_memory_rate": 0.4444444444444444,
+        "current_state_accuracy": 0.2222222222222222
       },
       "typedmem": {
         "recall_at_k": 1.0,
@@ -165,89 +165,89 @@
     "entity_disambiguation": {
       "vector": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.4666666666666667,
-        "mrr": 1.0,
-        "ndcg_at_k": 1.0,
-        "wrong_memory_rate": 0.5333333333333333,
-        "stale_memory_rate": 0.06666666666666667,
-        "current_state_accuracy": 1.0,
-        "entity_resolution": 1.0
+        "precision_at_k": 0.4833333333333334,
+        "mrr": 0.95,
+        "ndcg_at_k": 0.9630929753571458,
+        "wrong_memory_rate": 0.5166666666666666,
+        "stale_memory_rate": 0.03333333333333333,
+        "current_state_accuracy": 0.9,
+        "entity_resolution": 0.9
       },
       "vector_filter": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.4666666666666667,
-        "mrr": 1.0,
-        "ndcg_at_k": 1.0,
-        "wrong_memory_rate": 0.5333333333333333,
-        "stale_memory_rate": 0.06666666666666667,
-        "current_state_accuracy": 1.0,
-        "entity_resolution": 1.0
+        "precision_at_k": 0.4833333333333334,
+        "mrr": 0.95,
+        "ndcg_at_k": 0.9630929753571458,
+        "wrong_memory_rate": 0.5166666666666666,
+        "stale_memory_rate": 0.03333333333333333,
+        "current_state_accuracy": 0.9,
+        "entity_resolution": 0.9
       },
       "typedmem": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 1.0,
-        "ndcg_at_k": 1.0,
+        "mrr": 0.95,
+        "ndcg_at_k": 0.9630929753571458,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 1.0,
-        "entity_resolution": 1.0
+        "current_state_accuracy": 0.9,
+        "entity_resolution": 0.9
       }
     },
     "status_tracking": {
       "vector": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
-        "mrr": 0.5,
-        "ndcg_at_k": 0.6309297535714575,
+        "mrr": 0.5555555555555556,
+        "ndcg_at_k": 0.6719375587301846,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
-        "current_state_accuracy": 0.0
+        "current_state_accuracy": 0.1111111111111111
       },
       "vector_filter": {
-        "recall_at_k": 0.4,
-        "precision_at_k": 0.2,
-        "mrr": 0.2,
-        "ndcg_at_k": 0.252371901428583,
-        "wrong_memory_rate": 0.2,
-        "stale_memory_rate": 0.2,
+        "recall_at_k": 0.2222222222222222,
+        "precision_at_k": 0.1111111111111111,
+        "mrr": 0.1111111111111111,
+        "ndcg_at_k": 0.14020661190476835,
+        "wrong_memory_rate": 0.1111111111111111,
+        "stale_memory_rate": 0.1111111111111111,
         "current_state_accuracy": 0.0
       },
       "typedmem": {
-        "recall_at_k": 0.4,
-        "precision_at_k": 0.4,
-        "mrr": 0.4,
-        "ndcg_at_k": 0.4,
+        "recall_at_k": 0.2222222222222222,
+        "precision_at_k": 0.2222222222222222,
+        "mrr": 0.2222222222222222,
+        "ndcg_at_k": 0.2222222222222222,
         "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
-        "current_state_accuracy": 0.4
+        "current_state_accuracy": 0.2222222222222222
       }
     },
     "long_history_retrieval": {
       "vector": {
-        "recall_at_k": 0.75,
-        "precision_at_k": 0.15000000000000002,
-        "mrr": 0.3,
-        "ndcg_at_k": 0.4121780785943642,
-        "wrong_memory_rate": 0.8500000000000001,
-        "stale_memory_rate": 0.2,
+        "recall_at_k": 0.8571428571428571,
+        "precision_at_k": 0.17142857142857143,
+        "mrr": 0.34285714285714286,
+        "ndcg_at_k": 0.4710606612507019,
+        "wrong_memory_rate": 0.8285714285714285,
+        "stale_memory_rate": 0.19999999999999998,
         "current_state_accuracy": 0.0
       },
       "vector_filter": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.2791666666666667,
-        "mrr": 0.3625,
-        "ndcg_at_k": 0.5198472181127124,
-        "wrong_memory_rate": 0.7208333333333333,
-        "stale_memory_rate": 0.2791666666666667,
+        "precision_at_k": 0.2833333333333333,
+        "mrr": 0.37857142857142856,
+        "ndcg_at_k": 0.5325858838326152,
+        "wrong_memory_rate": 0.7166666666666667,
+        "stale_memory_rate": 0.2833333333333333,
         "current_state_accuracy": 0.0
       },
       "typedmem": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.3833333333333333,
+        "precision_at_k": 0.3904761904761905,
         "mrr": 1.0,
         "ndcg_at_k": 1.0,
-        "wrong_memory_rate": 0.6166666666666667,
+        "wrong_memory_rate": 0.6095238095238095,
         "stale_memory_rate": 0.0,
         "current_state_accuracy": 1.0
       }
@@ -257,7 +257,7 @@
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
         "mrr": 0.5,
-        "ndcg_at_k": 0.6309297535714575,
+        "ndcg_at_k": 0.6309297535714576,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
         "current_state_accuracy": 0.0
@@ -266,7 +266,7 @@
         "recall_at_k": 1.0,
         "precision_at_k": 0.5,
         "mrr": 0.5,
-        "ndcg_at_k": 0.6309297535714575,
+        "ndcg_at_k": 0.6309297535714576,
         "wrong_memory_rate": 0.5,
         "stale_memory_rate": 0.5,
         "current_state_accuracy": 0.0
@@ -285,27 +285,85 @@
       "vector": {
         "recall_at_k": 1.0,
         "precision_at_k": 0.3333333333333333,
-        "mrr": 0.625,
-        "ndcg_at_k": 0.7231973151785931,
+        "mrr": 0.6428571428571429,
+        "ndcg_at_k": 0.736378395408184,
         "wrong_memory_rate": 0.6666666666666666,
         "stale_memory_rate": 0.3333333333333333,
-        "current_state_accuracy": 0.25
+        "current_state_accuracy": 0.2857142857142857
       },
       "vector_filter": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.41666666666666663,
-        "mrr": 0.625,
-        "ndcg_at_k": 0.7231973151785931,
-        "wrong_memory_rate": 0.5833333333333333,
-        "stale_memory_rate": 0.41666666666666663,
-        "current_state_accuracy": 0.25
+        "precision_at_k": 0.38095238095238093,
+        "mrr": 0.6428571428571429,
+        "ndcg_at_k": 0.736378395408184,
+        "wrong_memory_rate": 0.619047619047619,
+        "stale_memory_rate": 0.38095238095238093,
+        "current_state_accuracy": 0.2857142857142857
       },
       "typedmem": {
         "recall_at_k": 1.0,
-        "precision_at_k": 0.75,
+        "precision_at_k": 0.6428571428571429,
         "mrr": 1.0,
         "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.35714285714285715,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    "implicit_goal": {
+      "vector": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.75,
+        "ndcg_at_k": 0.8154648767857288,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.5
+      },
+      "vector_filter": {
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.25,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.5,
         "wrong_memory_rate": 0.25,
+        "stale_memory_rate": 0.25,
+        "current_state_accuracy": 0.5
+      },
+      "typedmem": {
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.5,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.5
+      }
+    },
+    "mixed_type": {
+      "vector": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      },
+      "vector_filter": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      },
+      "typedmem": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
         "stale_memory_rate": 0.0,
         "current_state_accuracy": 1.0
       }
@@ -2692,6 +2750,2247 @@
       "query": "What is the user's planned vacation destination?",
       "retrieved_ids": [
         "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-06",
+      "category": "preference_evolution",
+      "system": "vector",
+      "query": "What messaging app does the user prefer these days?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "pref-06",
+      "category": "preference_evolution",
+      "system": "vector_filter",
+      "query": "What messaging app does the user prefer these days?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "pref-06",
+      "category": "preference_evolution",
+      "system": "typedmem",
+      "query": "What messaging app does the user prefer these days?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-07",
+      "category": "preference_evolution",
+      "system": "vector",
+      "query": "Which web browser does the user like most now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-07",
+      "category": "preference_evolution",
+      "system": "vector_filter",
+      "query": "Which web browser does the user like most now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-07",
+      "category": "preference_evolution",
+      "system": "typedmem",
+      "query": "Which web browser does the user like most now?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-08",
+      "category": "preference_evolution",
+      "system": "vector",
+      "query": "When does the user prefer to exercise now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-08",
+      "category": "preference_evolution",
+      "system": "vector_filter",
+      "query": "When does the user prefer to exercise now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-08",
+      "category": "preference_evolution",
+      "system": "typedmem",
+      "query": "When does the user prefer to exercise now?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "pref-09",
+      "category": "preference_evolution",
+      "system": "vector",
+      "query": "What music genre does the user enjoy currently?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "pref-09",
+      "category": "preference_evolution",
+      "system": "vector_filter",
+      "query": "What music genre does the user enjoy currently?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "pref-09",
+      "category": "preference_evolution",
+      "system": "typedmem",
+      "query": "What music genre does the user enjoy currently?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-06",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user focused on achieving this quarter?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-06",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user focused on achieving this quarter?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-06",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user focused on achieving this quarter?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-07",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user's current language-learning goal?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-07",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user's current language-learning goal?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-07",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user's current language-learning goal?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-08",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user saving toward right now?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-08",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user saving toward right now?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-08",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user saving toward right now?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-09",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user's current side project?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-09",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user's current side project?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-09",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user's current side project?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-10",
+      "category": "goal_evolution",
+      "system": "vector",
+      "query": "What is the user hoping to accomplish at work this year?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "goal-10",
+      "category": "goal_evolution",
+      "system": "vector_filter",
+      "query": "What is the user hoping to accomplish at work this year?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "goal-10",
+      "category": "goal_evolution",
+      "system": "typedmem",
+      "query": "What is the user hoping to accomplish at work this year?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-06",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "What is the user's final choice of CI system?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-06",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "What is the user's final choice of CI system?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-06",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "What is the user's final choice of CI system?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-07",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "Which payment provider did the user go with in the end?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-07",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "Which payment provider did the user go with in the end?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-07",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "Which payment provider did the user go with in the end?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-08",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "What license did the user settle on for the project?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-08",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "What license did the user settle on for the project?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-08",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "What license did the user settle on for the project?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-09",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "What is the user's chosen hosting region?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-09",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "What is the user's chosen hosting region?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "dec-09",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "What is the user's chosen hosting region?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-10",
+      "category": "decision_retrieval",
+      "system": "vector",
+      "query": "Which analytics tool did the user decide on?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-10",
+      "category": "decision_retrieval",
+      "system": "vector_filter",
+      "query": "Which analytics tool did the user decide on?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "dec-10",
+      "category": "decision_retrieval",
+      "system": "typedmem",
+      "query": "Which analytics tool did the user decide on?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-06",
+      "category": "temporal_updates",
+      "system": "vector",
+      "query": "What is the current office WiFi network name?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-06",
+      "category": "temporal_updates",
+      "system": "vector_filter",
+      "query": "What is the current office WiFi network name?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-06",
+      "category": "temporal_updates",
+      "system": "typedmem",
+      "query": "What is the current office WiFi network name?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-07",
+      "category": "temporal_updates",
+      "system": "vector",
+      "query": "How many employees does the company have now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-07",
+      "category": "temporal_updates",
+      "system": "vector_filter",
+      "query": "How many employees does the company have now?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-07",
+      "category": "temporal_updates",
+      "system": "typedmem",
+      "query": "How many employees does the company have now?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-08",
+      "category": "temporal_updates",
+      "system": "vector",
+      "query": "What is the current price of the premium plan?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-08",
+      "category": "temporal_updates",
+      "system": "vector_filter",
+      "query": "What is the current price of the premium plan?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-08",
+      "category": "temporal_updates",
+      "system": "typedmem",
+      "query": "What is the current price of the premium plan?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "temp-09",
+      "category": "temporal_updates",
+      "system": "vector",
+      "query": "What is the car's current mileage?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-09",
+      "category": "temporal_updates",
+      "system": "vector_filter",
+      "query": "What is the car's current mileage?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "temp-09",
+      "category": "temporal_updates",
+      "system": "typedmem",
+      "query": "What is the car's current mileage?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "ent-06",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "What did Amazon the company report recently?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-06",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "What did Amazon the company report recently?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-06",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "What did Amazon the company report recently?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-07",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "Tell me about Turkey the country.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-07",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "Tell me about Turkey the country.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-07",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "Tell me about Turkey the country.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-08",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "What is Ruby the programming language used for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-08",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "What is Ruby the programming language used for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-08",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "What is Ruby the programming language used for?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-09",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "Tell me about bass the musical instrument.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-09",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "Tell me about bass the musical instrument.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-09",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "Tell me about bass the musical instrument.",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0,
+        "entity_resolution": 1.0
+      }
+    },
+    {
+      "task_id": "ent-10",
+      "category": "entity_disambiguation",
+      "system": "vector",
+      "query": "What is Mercury the car brand known for?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0,
+        "entity_resolution": 0.0
+      }
+    },
+    {
+      "task_id": "ent-10",
+      "category": "entity_disambiguation",
+      "system": "vector_filter",
+      "query": "What is Mercury the car brand known for?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0,
+        "entity_resolution": 0.0
+      }
+    },
+    {
+      "task_id": "ent-10",
+      "category": "entity_disambiguation",
+      "system": "typedmem",
+      "query": "What is Mercury the car brand known for?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0,
+        "entity_resolution": 0.0
+      }
+    },
+    {
+      "task_id": "stat-06",
+      "category": "status_tracking",
+      "system": "vector",
+      "query": "What is the current status of the online order?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-06",
+      "category": "status_tracking",
+      "system": "vector_filter",
+      "query": "What is the current status of the online order?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-06",
+      "category": "status_tracking",
+      "system": "typedmem",
+      "query": "What is the current status of the online order?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-07",
+      "category": "status_tracking",
+      "system": "vector",
+      "query": "What is the current status of the pull request?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "stat-07",
+      "category": "status_tracking",
+      "system": "vector_filter",
+      "query": "What is the current status of the pull request?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-07",
+      "category": "status_tracking",
+      "system": "typedmem",
+      "query": "What is the current status of the pull request?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-08",
+      "category": "status_tracking",
+      "system": "vector",
+      "query": "What is the current status of the loan application?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-08",
+      "category": "status_tracking",
+      "system": "vector_filter",
+      "query": "What is the current status of the loan application?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-08",
+      "category": "status_tracking",
+      "system": "typedmem",
+      "query": "What is the current status of the loan application?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-09",
+      "category": "status_tracking",
+      "system": "vector",
+      "query": "What is the current status of the server migration?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-09",
+      "category": "status_tracking",
+      "system": "vector_filter",
+      "query": "What is the current status of the server migration?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "stat-09",
+      "category": "status_tracking",
+      "system": "typedmem",
+      "query": "What is the current status of the server migration?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-05",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "Who is the user's current manager?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d4",
+        "d1",
+        "d2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-05",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "Who is the user's current manager?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d4"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-05",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "Who is the user's current manager?",
+      "retrieved_ids": [
+        "m2",
+        "d4"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "lhist-06",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "What car does the user currently drive?",
+      "retrieved_ids": [
+        "m1",
+        "d2",
+        "d4",
+        "d1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-06",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "What car does the user currently drive?",
+      "retrieved_ids": [
+        "m1",
+        "d2",
+        "d4",
+        "d1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-06",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "What car does the user currently drive?",
+      "retrieved_ids": [
+        "m2",
+        "d1",
+        "d4",
+        "d2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "lhist-07",
+      "category": "long_history_retrieval",
+      "system": "vector",
+      "query": "What is the user's current phone number?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d3",
+        "d2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.8,
+        "stale_memory_rate": 0.2,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-07",
+      "category": "long_history_retrieval",
+      "system": "vector_filter",
+      "query": "What is the user's current phone number?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "lhist-07",
+      "category": "long_history_retrieval",
+      "system": "typedmem",
+      "query": "What is the user's current phone number?",
+      "retrieved_ids": [
+        "m2",
+        "d3"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-05",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "What database did the user settle on across our conversations?",
+      "retrieved_ids": [
+        "m2",
+        "m1",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-05",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "What database did the user settle on across our conversations?",
+      "retrieved_ids": [
+        "m2",
+        "m1",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-05",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "What database did the user settle on across our conversations?",
+      "retrieved_ids": [
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-06",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "What diet is the user currently following?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-06",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "What diet is the user currently following?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-06",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "What diet is the user currently following?",
+      "retrieved_ids": [
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "xsess-07",
+      "category": "cross_session",
+      "system": "vector",
+      "query": "What did the user name their startup?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-07",
+      "category": "cross_session",
+      "system": "vector_filter",
+      "query": "What did the user name their startup?",
+      "retrieved_ids": [
+        "m1",
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.6666666666666666,
+        "stale_memory_rate": 0.3333333333333333,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "xsess-07",
+      "category": "cross_session",
+      "system": "typedmem",
+      "query": "What did the user name their startup?",
+      "retrieved_ids": [
+        "m2",
+        "d1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-05",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "What time is the flight departing?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-05",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "What time is the flight departing?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-05",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "What time is the flight departing?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-06",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "What is the total project budget?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-06",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "What is the total project budget?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-06",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "What is the total project budget?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "contra-07",
+      "category": "contradictions",
+      "system": "vector",
+      "query": "What is the office mailing address?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-07",
+      "category": "contradictions",
+      "system": "vector_filter",
+      "query": "What is the office mailing address?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "contra-07",
+      "category": "contradictions",
+      "system": "typedmem",
+      "query": "What is the office mailing address?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "implgoal-01",
+      "category": "implicit_goal",
+      "system": "vector",
+      "query": "What is the user working toward with their savings?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "implgoal-01",
+      "category": "implicit_goal",
+      "system": "vector_filter",
+      "query": "What is the user working toward with their savings?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "implgoal-01",
+      "category": "implicit_goal",
+      "system": "typedmem",
+      "query": "What is the user working toward with their savings?",
+      "retrieved_ids": [],
+      "metrics": {
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 0.0
+      }
+    },
+    {
+      "task_id": "implgoal-02",
+      "category": "implicit_goal",
+      "system": "vector",
+      "query": "What outcome is the user hoping for in the salary negotiation?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "implgoal-02",
+      "category": "implicit_goal",
+      "system": "vector_filter",
+      "query": "What outcome is the user hoping for in the salary negotiation?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.5,
+        "stale_memory_rate": 0.5,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "implgoal-02",
+      "category": "implicit_goal",
+      "system": "typedmem",
+      "query": "What outcome is the user hoping for in the salary negotiation?",
+      "retrieved_ids": [
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-01",
+      "category": "mixed_type",
+      "system": "vector",
+      "query": "What is the user's current role and current career goal?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-01",
+      "category": "mixed_type",
+      "system": "vector_filter",
+      "query": "What is the user's current role and current career goal?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-01",
+      "category": "mixed_type",
+      "system": "typedmem",
+      "query": "What is the user's current role and current career goal?",
+      "retrieved_ids": [
+        "m1",
+        "m2"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-02",
+      "category": "mixed_type",
+      "system": "vector",
+      "query": "What editor does the user prefer and what did they decide to standardize the team on?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-02",
+      "category": "mixed_type",
+      "system": "vector_filter",
+      "query": "What editor does the user prefer and what did they decide to standardize the team on?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "precision_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "wrong_memory_rate": 0.0,
+        "stale_memory_rate": 0.0,
+        "current_state_accuracy": 1.0
+      }
+    },
+    {
+      "task_id": "mixed-02",
+      "category": "mixed_type",
+      "system": "typedmem",
+      "query": "What editor does the user prefer and what did they decide to standardize the team on?",
+      "retrieved_ids": [
+        "m2",
+        "m1"
       ],
       "metrics": {
         "recall_at_k": 1.0,

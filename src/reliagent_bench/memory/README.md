@@ -4,8 +4,9 @@
 return more correct memories than *vector-only* retrieval?
 
 This is a **v0 benchmark and reproducible demonstration** — **not** a definitive
-or general-purpose memory benchmark. The dataset is **42 hand-labeled synthetic
-tasks across nine categories** (target: ~100), so every number here is
+or general-purpose memory benchmark. The dataset is **82 hand-labeled synthetic
+tasks across eleven categories** (target: ~100, including routing-stress
+categories `implicit_goal` and `mixed_type`), so every number here is
 **preliminary**. We do **not** claim TypedMem outperforms vector-memory systems
 in general. The narrow, supported finding is:
 
@@ -42,32 +43,29 @@ lives in [`results/`](results/) so you can see the evidence without running.
 [`14f54b5`](https://github.com/canis-minor/typedmem/commit/14f54b5) ·
 embedder `hashing:dim=1024;ngram=2` · k=5 · seed=0.
 
-## Results (seed dataset, 42 tasks, k=5, seed=0)
+## Results (seed dataset, 82 tasks, k=5, seed=0)
 
 | System | Recall@5 | Prec@5 | MRR | NDCG | Wrong-rate ↓ | Stale-rate ↓ | Cur-state ↑ |
 |---|---|---|---|---|---|---|---|
-| vector | **0.98** | 0.45 | 0.64 | 0.72 | 0.55 | 0.37 | 0.31 |
-| vector_filter | 0.90 | 0.43 | 0.58 | 0.67 | 0.48 | 0.34 | 0.29 |
-| typedmem | 0.90 | **0.74** | **0.88** | **0.89** | **0.17** | **0.00** | **0.86** |
+| vector | **0.99** | 0.47 | 0.66 | 0.75 | 0.53 | 0.37 | 0.35 |
+| vector_filter | 0.83 | 0.40 | 0.56 | 0.63 | 0.43 | 0.30 | 0.30 |
+| typedmem | 0.83 | **0.67** | **0.81** | **0.82** | **0.16** | **0.00** | **0.79** |
+
+The recall gap (0.99 → 0.83) widened as v1.3 added routing-stress tasks — that is
+the router over-filtering, quantified. Full per-category numbers are in the
+committed run at [`results/seed_report.md`](results/seed_report.md).
 
 Note the **recall regression** (1.00 → 0.91): typed filtering is not free. The v0
 router's broad `what is → fact` rule mis-routes some goal/status queries and the
 type filter then drops the correct memories (see failure examples). This is a
 real, benchmark-surfaced cost — reported, not hidden.
 
-### Per category (Recall@5 / Stale-rate / Cur-state)
+### Per category
 
-| Category | vector | vector_filter | typedmem |
-|---|---|---|---|
-| preference_evolution | 1.00 / 0.50 / 0.80 | 1.00 / 0.50 / 0.80 | 1.00 / **0.00** / **1.00** |
-| goal_evolution | 1.00 / 0.53 / 0.40 | 0.80 / 0.43 / 0.20 | 0.80 / **0.00** / 0.80 |
-| decision_retrieval | 1.00 / 0.30 / 0.00 | 1.00 / 0.30 / 0.00 | 1.00 / **0.00** / 0.60 |
-| temporal_updates | 1.00 / 0.40 / 0.20 | 1.00 / 0.40 / 0.20 | 1.00 / **0.00** / **1.00** |
-| entity_disambiguation | 1.00 / 0.07 / 1.00 | 1.00 / 0.07 / 1.00 | 1.00 / **0.00** / 1.00 |
-| status_tracking | 1.00 / 0.50 / 0.00 | 0.40 / 0.20 / 0.00 | 0.40 / **0.00** / 0.40 |
-| long_history_retrieval | 0.75 / 0.20 / 0.00 | 1.00 / 0.28 / 0.00 | 1.00 / **0.00** / **1.00** |
-| contradictions | 1.00 / 0.50 / 0.00 | 1.00 / 0.50 / 0.00 | 1.00 / **0.00** / **1.00** |
-| cross_session | 1.00 / 0.33 / 0.25 | 1.00 / 0.42 / 0.25 | 1.00 / **0.00** / **1.00** |
+Most categories show TypedMem at or near 1.00 current-state vs. 0.00–0.33 for
+vector; entity disambiguation shows no typed advantage (v0 has no entity linking).
+The full per-category table (all 11 categories) is in the committed run:
+[`results/seed_report.md`](results/seed_report.md).
 
 The **ablation** (`--ablation`) attributes the gains to the **resolver**: adding
 it alone takes stale-rate to 0 and lifts current-state accuracy sharply. The new
@@ -144,9 +142,33 @@ evidence favors **D (rule + fallback)** over the current hard router — but the
 decision is deferred until the dataset nears 100 tasks and E/F are run, per the
 milestone (no auto-selection of the top scorer).
 
+## Validation (v1.3): does the routing conclusion hold at scale?
+
+After growing the benchmark 42 → 82 (adding routing-stress categories), we
+re-ran the matrix and measured an **Oracle Gap** (Oracle − variant) and the
+failure distribution, then made a **data-driven decision**. Nothing was tuned.
+
+```bash
+python -m reliagent_bench.memory --validate --k 5 --seed 0 [--save-analysis]
+```
+
+**Oracle Gap on the held-out eval set (current-state accuracy):** A hard rule
+**+0.15**, C soft **+0.15**, B none **+0.00**, **D rule+fallback +0.00**. **Failure
+distribution (typedmem):** router **82%** (14/17), ranking 12%, entity 6%.
+**Stability (v1.1→v1.3):** 42→82 tasks, stale-rate stays 0.00, router the dominant
+failure throughout (67% → 82%).
+
+**Decision — Case A:** `Rule + Global Fallback ≈ Oracle` (current-state gap
++0.00), so **routing is effectively solved by the fallback** — an LLM router is
+**not** justified by the evidence. Freeze routing research; next up is external
+baselines (Mem0 / LangMem / Zep). Committed report:
+[`../../../analysis/validation_reports/`](../../../analysis/validation_reports/).
+(Still preliminary — eval set is 26 tasks; the conclusion should be re-confirmed
+nearer 100.)
+
 ## Limitations
 
-- **Dataset size.** 42 tasks — a step toward the ~100-task target, still small.
+- **Dataset size.** 82 tasks — a step toward the ~100-task target, still small.
   Enough to demonstrate the harness and produce directional signal; **not** enough
   for statistical claims. Treat all numbers as preliminary.
 - **Synthetic data.** Every task is hand-authored, not drawn from real

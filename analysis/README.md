@@ -10,6 +10,7 @@ analysis/
     category_reports/    per-category baseline→target improvement tables
     failure_reports/     every target-system failure, classified with a fix
     router_reports/      router experiment matrix (variants A-F + Oracle)
+    validation_reports/  Oracle gap + failure distribution + stability + decision
     plots/               (reserved)
 ```
 
@@ -28,10 +29,12 @@ and labeled: `router` (type filter dropped the relevant memory), `embedding`
 `entity` (wrong entity on top), `ranking` (retrieved but ranked too low),
 `unknown`.
 
-## Current top-line finding (bench 1.1 · dataset 0.2 · typedmem 0.8.0 @ 14f54b5)
+## Current top-line finding (bench 1.3 · dataset 0.3 · typedmem 0.8.0 @ 14f54b5)
 
-42 tasks, k=5, seed=0. TypedMem current-state accuracy **0.86** vs. vector
-**0.31**; stale-rate **0.00** vs. **0.37**. Of TypedMem's **6** failures,
-**4 are `router`** (the `what is → fact` over-filtering) and **2 are `ranking`**
-— zero embedding/temporal/entity. This concentrates the next milestone squarely
-on the **router**, with evidence rather than intuition.
+82 tasks, k=5, seed=0. TypedMem current-state accuracy **0.79** vs. vector
+**0.35**; stale-rate **0.00** vs. **0.37**. Of TypedMem's **17** failures,
+**14 are `router`** (82%), 2 `ranking`, 1 `entity` — zero embedding/temporal.
+The **v1.3 validation** shows **Rule + Global Fallback ≈ Oracle** (current-state
+gap **+0.00** on the held-out eval set): routing is effectively solved by the
+fallback, so an LLM router is **not** justified yet (decision **Case A** — freeze
+routing, move to external baselines).

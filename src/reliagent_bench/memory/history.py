@@ -23,11 +23,27 @@ import typedmem
 from .analysis import failure_summary
 from .dataset import DATASET_VERSION
 
-BENCHMARK_VERSION = "1.1"
+BENCHMARK_VERSION = "1.3"
 
 # repo root = .../reliagent-bench (dataset.py lives at src/reliagent_bench/memory/)
 REPO_ROOT = Path(__file__).resolve().parents[3]
 ANALYSIS_DIR = REPO_ROOT / "analysis"
+
+
+def load_history_records() -> list[dict]:
+    """All committed benchmark-history records, sorted by (dataset, benchmark)
+    version — for cross-version stability analysis."""
+    hist_dir = ANALYSIS_DIR / "benchmark_history"
+    if not hist_dir.exists():
+        return []
+    records = []
+    for p in sorted(hist_dir.glob("*.json")):
+        try:
+            records.append(json.loads(p.read_text(encoding="utf-8")))
+        except Exception:
+            continue
+    records.sort(key=lambda r: (r.get("dataset_version", ""), r.get("benchmark_version", "")))
+    return records
 
 
 def _git_commit(path: Path | str) -> str | None:
@@ -72,6 +88,18 @@ def build_history_record(result, records) -> dict:
 def run_slug(result) -> str:
     c = result.config
     return f"bench{BENCHMARK_VERSION}_ds{DATASET_VERSION}_tm{c.typedmem_version}_{c.dataset}_k{c.k}_seed{c.seed}"
+
+
+def write_history_record(record: dict) -> Path:
+    """Persist a single history record (preserved across versions)."""
+    (ANALYSIS_DIR / "benchmark_history").mkdir(parents=True, exist_ok=True)
+    cfg = record["config"]
+    slug = (f"bench{record['benchmark_version']}_ds{record['dataset_version']}"
+            f"_tm{record['typedmem_version']}_{record['dataset']}_k{cfg['k']}_seed{cfg['seed']}")
+    path = ANALYSIS_DIR / "benchmark_history" / f"{slug}.json"
+    import json as _json
+    path.write_text(_json.dumps(record, indent=2), encoding="utf-8")
+    return path
 
 
 def write_run_artifacts(result, records, *, category_md: str, failure_md: str) -> Path:

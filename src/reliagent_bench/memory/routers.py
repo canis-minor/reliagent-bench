@@ -101,11 +101,8 @@ class OracleRouter:
 
     @classmethod
     def from_tasks(cls, tasks) -> "OracleRouter":
-        mapping: dict[str, list[str]] = {}
-        for t in tasks:
-            et = t.eff_expected_memory_type()
-            mapping[t.query] = [et] if et else []
-        return cls(mapping)
+        # Route to ALL relevant types so mixed-type tasks get a true ceiling.
+        return cls({t.query: t.relevant_types() for t in tasks})
 
 
 class LLMRouter:

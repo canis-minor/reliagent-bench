@@ -43,26 +43,27 @@ def split_tasks(tasks: list[MemoryTask], *, eval_fraction: float = 0.3, seed: in
 
 
 def router_metrics(task: MemoryTask, diag: dict) -> dict[str, float]:
-    expected = task.eff_expected_memory_type()
-    predicted = diag["predicted_types"]
+    expected = set(task.relevant_types())     # all relevant types (mixed-type aware)
+    predicted = set(diag["predicted_types"])
     rm: dict[str, float] = {
         "num_searched_types": float(diag["num_searched_types"]),
         "empty_result_rate": 1.0 if diag["empty_result"] else 0.0,
         "fallback_rate": 1.0 if diag["fallback_used"] else 0.0,
     }
-    if expected is not None:
-        rm["exact_type_accuracy"] = 1.0 if set(predicted) == {expected} else 0.0
-        rm["acceptable_type_recall"] = 1.0 if (expected in predicted or not predicted) else 0.0
-        rm["candidate_exclusion_rate"] = 1.0 if (predicted and expected not in predicted) else 0.0
+    if expected:
+        rm["exact_type_accuracy"] = 1.0 if predicted == expected else 0.0
+        # acceptable if every relevant type is covered, or no filter at all
+        rm["acceptable_type_recall"] = 1.0 if (expected <= predicted or not predicted) else 0.0
+        rm["candidate_exclusion_rate"] = 1.0 if (predicted and not expected <= predicted) else 0.0
     return rm
 
 
 def router_failure_subtype(task: MemoryTask, diag: dict) -> str:
-    predicted = diag["predicted_types"]
-    expected = task.eff_expected_memory_type()
+    predicted = set(diag["predicted_types"])
+    expected = set(task.relevant_types())
     if not predicted:
         return "no_route"
-    if expected and expected not in predicted:
+    if expected and not expected <= predicted:
         return "overly_narrow" if len(predicted) == 1 else "wrong_type"
     if diag["empty_result"]:
         return "correct_route_empty"

@@ -1,0 +1,64 @@
+{
+  "benchmark_version": "1.3",
+  "dataset_version": "0.3",
+  "dataset": "seed",
+  "num_tasks": 82,
+  "typedmem_version": "0.8.0",
+  "typedmem_commit": "14f54b5",
+  "reliagent_commit": "cba25e6",
+  "config": {
+    "k": 5,
+    "seed": 0,
+    "embedder_id": "hashing:dim=1024;ngram=2",
+    "embedder_dim": 1024,
+    "systems": [
+      "vector",
+      "vector_filter",
+      "typedmem"
+    ]
+  },
+  "overall": {
+    "vector": {
+      "recall_at_k": 0.9878048780487805,
+      "precision_at_k": 0.47195121951219526,
+      "mrr": 0.6634146341463415,
+      "ndcg_at_k": 0.7478072352809996,
+      "wrong_memory_rate": 0.5280487804878048,
+      "stale_memory_rate": 0.3747967479674796,
+      "current_state_accuracy": 0.35365853658536583,
+      "entity_resolution": 0.9
+    },
+    "vector_filter": {
+      "recall_at_k": 0.8292682926829268,
+      "precision_at_k": 0.4002032520325203,
+      "mrr": 0.5567073170731708,
+      "ndcg_at_k": 0.62733624774879,
+      "wrong_memory_rate": 0.42906504065040657,
+      "stale_memory_rate": 0.3006097560975609,
+      "current_state_accuracy": 0.3048780487804878,
+      "entity_resolution": 0.9
+    },
+    "typedmem": {
+      "recall_at_k": 0.8292682926829268,
+      "precision_at_k": 0.6735772357723577,
+      "mrr": 0.8109756097560976,
+      "ndcg_at_k": 0.8157657226916388,
+      "wrong_memory_rate": 0.15569105691056911,
+      "stale_memory_rate": 0.0,
+      "current_state_accuracy": 0.7926829268292683,
+      "entity_resolution": 0.9
+    }
+  },
+  "failures": {
+    "total": 17,
+    "by_type": {
+      "router": 14,
+      "entity": 1,
+      "embedding": 0,
+      "temporal": 0,
+      "ranking": 2,
+      "unknown": 0
+    }
+  },
+  "generated_at": "2026-07-19T07:40:54.435996+00:00"
+}

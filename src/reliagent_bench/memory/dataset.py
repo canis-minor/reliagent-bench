@@ -24,7 +24,7 @@ DEFAULT_DATASET = DATASETS_DIR / "seed.jsonl"
 
 # Bump when the dataset's shape or contents change materially. Recorded in the
 # benchmark history so results can be compared across dataset versions.
-DATASET_VERSION = "0.2"
+DATASET_VERSION = "0.3"
 
 _TEMPORAL_CATEGORIES = {
     "preference_evolution", "goal_evolution", "temporal_updates",
@@ -82,10 +82,19 @@ class MemoryTask:
             return self.requires_conflict_resolution
         return self.category == "contradictions"
 
+    def relevant_types(self) -> list[str]:
+        """Distinct memory types across the relevant memories (in order). A
+        mixed-type task has more than one; perfect routing must cover them all."""
+        seen: list[str] = []
+        for m in self.memories:
+            if m["id"] in self.relevant and m["type"] not in seen:
+                seen.append(m["type"])
+        return seen
+
     def eff_expected_memory_type(self) -> str | None:
         if self.expected_memory_type:
             return self.expected_memory_type
-        types = [m["type"] for m in self.memories if m["id"] in self.relevant]
+        types = self.relevant_types()
         return types[0] if types else None
 
     def eff_difficulty(self) -> str:

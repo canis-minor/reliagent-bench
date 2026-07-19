@@ -7,13 +7,14 @@ from reliagent_bench.memory.dataset import build_store
 
 def test_seed_dataset_loads():
     tasks = load_tasks()
-    assert len(tasks) >= 30
+    assert len(tasks) >= 80
     categories = {t.category for t in tasks}
-    assert categories == {
+    required = {
         "preference_evolution", "goal_evolution", "decision_retrieval",
         "temporal_updates", "entity_disambiguation", "status_tracking",
         "long_history_retrieval", "contradictions", "cross_session",
     }
+    assert required <= categories   # plus routing-stress categories (implicit_goal, mixed_type)
     # Task ids are unique, and every label references a real memory id.
     assert len({t.id for t in tasks}) == len(tasks)
     for t in tasks:

@@ -43,6 +43,14 @@ from .routers import (
     SoftRuleRouter,
 )
 from .runner import BenchmarkResult, QueryResult, RunConfig, run_benchmark
+from .validate import (
+    Validation,
+    decide,
+    failure_distribution,
+    oracle_gap,
+    render_validation,
+    run_validation,
+)
 
 __all__ = [
     "ABLATION_SYSTEMS",
@@ -65,22 +73,28 @@ __all__ = [
     "RunConfig",
     "SoftRuleRouter",
     "TypedMemRetriever",
+    "Validation",
     "VectorRetriever",
     "build_history_record",
     "build_store",
     "category_improvement",
+    "decide",
     "default_variants",
     "diagnose",
     "diagnose_all",
     "evaluate_query",
+    "failure_distribution",
     "failure_summary",
     "is_failure",
     "load_tasks",
     "mean_metrics",
+    "oracle_gap",
+    "render_validation",
     "router_failure_subtype",
     "router_metrics",
     "run_benchmark",
     "run_router_matrix",
+    "run_validation",
     "split_tasks",
     "stage_contribution",
     "write_run_artifacts",
