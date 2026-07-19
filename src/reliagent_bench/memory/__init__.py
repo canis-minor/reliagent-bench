@@ -25,6 +25,23 @@ from .baselines import (
 from .dataset import DATASET_VERSION, DEFAULT_DATASET, MemoryTask, build_store, load_tasks
 from .evaluator import evaluate_query, mean_metrics
 from .history import BENCHMARK_VERSION, build_history_record, write_run_artifacts
+from .router_experiment import (
+    default_variants,
+    router_failure_subtype,
+    router_metrics,
+    run_router_matrix,
+    split_tasks,
+)
+from .router_pipeline import RouterPipelineRetriever
+from .routers import (
+    HybridRouter,
+    LLMRouter,
+    NoRouter,
+    OracleRouter,
+    RouteResult,
+    RuleRouter,
+    SoftRuleRouter,
+)
 from .runner import BenchmarkResult, QueryResult, RunConfig, run_benchmark
 
 __all__ = [
@@ -36,14 +53,23 @@ __all__ = [
     "DEFAULT_DATASET",
     "FailureRecord",
     "FilteredVectorRetriever",
+    "HybridRouter",
+    "LLMRouter",
     "MemoryTask",
+    "NoRouter",
+    "OracleRouter",
     "QueryResult",
+    "RouteResult",
+    "RouterPipelineRetriever",
+    "RuleRouter",
     "RunConfig",
+    "SoftRuleRouter",
     "TypedMemRetriever",
     "VectorRetriever",
     "build_history_record",
     "build_store",
     "category_improvement",
+    "default_variants",
     "diagnose",
     "diagnose_all",
     "evaluate_query",
@@ -51,7 +77,11 @@ __all__ = [
     "is_failure",
     "load_tasks",
     "mean_metrics",
+    "router_failure_subtype",
+    "router_metrics",
     "run_benchmark",
+    "run_router_matrix",
+    "split_tasks",
     "stage_contribution",
     "write_run_artifacts",
 ]

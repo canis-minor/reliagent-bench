@@ -9,6 +9,7 @@ analysis/
                          commit hashes, config, seed, overall metrics, failures
     category_reports/    per-category baseline→target improvement tables
     failure_reports/     every target-system failure, classified with a fix
+    router_reports/      router experiment matrix (variants A-F + Oracle)
     plots/               (reserved)
 ```
 

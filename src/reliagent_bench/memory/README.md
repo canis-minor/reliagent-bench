@@ -108,6 +108,42 @@ comparable across versions and engineering is driven by evidence.
 temporal / entity. That evidence — not intuition — points the next milestone at
 the router.
 
+## Router experiment (v1.2)
+
+Because failure analysis flagged the router, we benchmark routing *strategies*
+(the resolver and ranker stay fixed) on a deterministic, category-stratified
+dev/eval split. TypedMem is **not** modified — routers are injected into the
+pipeline via the public stage functions (`RouterPipelineRetriever`). Only after a
+router wins consistently should it become a TypedMem default.
+
+```bash
+python -m reliagent_bench.memory --router-matrix --k 5 --seed 0 [--save-analysis]
+```
+
+Variants: **A** hard rule (baseline) · **B** no router (control) · **C** soft
+top-N · **D** rule + global fallback · **Oracle** (labeled-type ceiling). **E**
+(LLM: structured output, temp=0, versioned prompt, cached replay) and **F**
+(hybrid: rule, LLM only when unconfident) are implemented but need an LLM
+client/cache, so they are excluded from the offline run.
+
+**Held-out eval finding (committed run in [`../../../analysis/router_reports/`](../../../analysis/router_reports/)):**
+
+| Variant | Recall | Cur-state | Excl-rate | Empty-rate |
+|---|---|---|---|---|
+| A rule (hard) | 0.93 | 0.87 | 0.07 | 0.07 |
+| **B none** | **1.00** | **0.93** | 0.00 | 0.00 |
+| C soft top-2 | 0.93 | 0.87 | 0.07 | 0.07 |
+| **D rule + fallback** | **1.00** | **0.93** | 0.07 | **0.00** |
+| Oracle (ceiling) | 1.00 | 0.93 | 0.00 | 0.00 |
+
+Reading (still preliminary, small eval set): **hard routing (A) costs recall**;
+the **global fallback (D) recovers it to the no-router ceiling while keeping typed
+precision and zero stale**; **soft top-N (C) does not help** — it cannot fix a
+*confident* mis-route. Stale-rate is 0.00 everywhere (resolver unchanged). The
+evidence favors **D (rule + fallback)** over the current hard router — but the
+decision is deferred until the dataset nears 100 tasks and E/F are run, per the
+milestone (no auto-selection of the top scorer).
+
 ## Limitations
 
 - **Dataset size.** 42 tasks — a step toward the ~100-task target, still small.

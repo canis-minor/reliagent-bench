@@ -30,12 +30,19 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--dim", type=int, default=1024, help="embedding dimension")
     p.add_argument("--ablation", action="store_true", help="run the stage ablation, not the 3 arms")
+    p.add_argument("--router-matrix", action="store_true",
+                   help="run the router experiment (variants A-D + Oracle) on a dev/eval split")
     p.add_argument("--json", action="store_true", help="emit full per-query results as JSON")
     p.add_argument("--save-analysis", action="store_true",
                    help="write versioned history + category/failure reports under analysis/")
     args = p.parse_args(argv)
 
     tasks = load_tasks(args.dataset)
+
+    if args.router_matrix:
+        _run_router_matrix(tasks, args)
+        return
+
     systems = ABLATION_SYSTEMS if args.ablation else DEFAULT_SYSTEMS
     result = run_benchmark(
         tasks, systems, k=args.k, seed=args.seed, embedder_dim=args.dim,
@@ -61,6 +68,30 @@ def main(argv: list[str] | None = None) -> None:
     if args.save_analysis:
         path = write_run_artifacts(result, records, category_md=category_md, failure_md=failure_md)
         print(f"\n_analysis written under {path.parent.parent}/ (record: {path.name})_")
+
+
+def _run_router_matrix(tasks, args) -> None:
+    from .history import ANALYSIS_DIR
+    from .router_experiment import (
+        default_variants,
+        render_report,
+        run_router_matrix,
+        split_tasks,
+    )
+
+    dev, ev = split_tasks(tasks, eval_fraction=0.3, seed=args.seed)
+    variants = default_variants(tasks)
+    dev_results = run_router_matrix(dev, variants, k=args.k, seed=args.seed, embedder_dim=args.dim)
+    eval_results = run_router_matrix(ev, variants, k=args.k, seed=args.seed, embedder_dim=args.dim)
+    report = render_report(dev_results, eval_results, k=args.k, seed=args.seed,
+                           num_dev=len(dev), num_eval=len(ev))
+    print(report)
+    if args.save_analysis:
+        out_dir = ANALYSIS_DIR / "router_reports"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        path = out_dir / f"router_matrix_k{args.k}_seed{args.seed}.md"
+        path.write_text(report, encoding="utf-8")
+        print(f"\n_router matrix written to {path}_")
 
 
 if __name__ == "__main__":
