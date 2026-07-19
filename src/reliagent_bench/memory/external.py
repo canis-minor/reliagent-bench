@@ -34,8 +34,19 @@ def _memory_text(spec: dict) -> str:
 
 
 class Mem0Retriever:
-    """Adapter for Mem0 (`pip install mem0ai`). Needs an LLM key (e.g.
-    OPENAI_API_KEY) and a vector store; uses Mem0's defaults."""
+    """Adapter for Mem0 (`pip install mem0ai`). Needs an embedder/LLM key (e.g.
+    OPENAI_API_KEY) and a vector store; uses Mem0's defaults.
+
+    Validated against the **mem0ai 2.0.12** API surface (calls verified by
+    introspection; not run end-to-end here — that needs a live key). Key details
+    for a fair benchmark run:
+    - ``infer=False`` on ``add`` stores each benchmark memory **verbatim** (1:1);
+      the default ``infer=True`` would run an LLM to extract/rewrite facts,
+      breaking the id mapping and changing what is being measured.
+    - ``search`` takes ``top_k`` (not ``limit``) and scopes via
+      ``filters={"user_id": ...}`` (not a bare ``user_id=`` kwarg).
+    - custom metadata round-trips under ``result["metadata"]``, so the benchmark
+      id comes back as ``result["metadata"]["mid"]``."""
 
     name = "mem0"
 
@@ -53,12 +64,13 @@ class Mem0Retriever:
 
     def ingest(self, task: MemoryTask) -> None:
         for spec in task.memories:
-            # Store our benchmark id in metadata so search results map back.
-            self._m.add(_memory_text(spec), user_id=_UID, metadata={"mid": spec["id"]})
+            # infer=False → store verbatim; metadata carries our benchmark id.
+            self._m.add(_memory_text(spec), user_id=_UID,
+                        metadata={"mid": spec["id"]}, infer=False)
 
     def retrieve(self, query: str, top_k: int) -> list[str]:
-        res = self._m.search(query, user_id=_UID, limit=top_k)
-        items = res.get("results", res) if isinstance(res, dict) else res
+        res = self._m.search(query, top_k=top_k, filters={"user_id": _UID})
+        items = res.get("results", []) if isinstance(res, dict) else (res or [])
         ids: list[str] = []
         for r in items:
             meta = (r.get("metadata") or {}) if isinstance(r, dict) else {}

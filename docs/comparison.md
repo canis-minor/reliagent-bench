@@ -75,9 +75,17 @@ python -m reliagent_bench.memory --compare --save-analysis
 ```
 
 The registry auto-includes any system whose package + config is present; missing
-systems are skipped (never faked). The adapters are **experimental/unverified** —
-confirm the two or three marked API calls against your installed version, since
-those APIs change between releases.
+systems are skipped (never faked).
+
+**Mem0 adapter — API-surface validated against `mem0ai==2.0.12`.** Introspection
+of the installed package caught three real defects and they are fixed: `search`
+takes `top_k` (not `limit`) and scopes via `filters={"user_id": ...}` (not a bare
+`user_id=`); and `add` must pass `infer=False` to store each benchmark memory
+**verbatim** (the default runs an LLM to extract/rewrite facts, which would break
+the id mapping and change what is measured). The corrected calls bind cleanly to
+2.0.12's signatures. **End-to-end execution is still pending** — it needs a live
+embedder/LLM key (e.g. `OPENAI_API_KEY`), which this environment does not have.
+The LangMem and Zep adapters remain unvalidated skeletons.
 
 > The results above are the internal baselines only. Real Mem0/LangMem/Zep
 > numbers, the full four-way category leaderboard, and the cross-architecture
