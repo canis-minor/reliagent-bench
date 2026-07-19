@@ -175,8 +175,9 @@ system, TypedMem included.
    executable environment (package + LLM key), then run Stages 2–4 (Mem0 →
    LangMem → Zep) and produce the four-way leaderboard + heatmap.
 2. **Real-embedder pass** to test RQ-A / RQ-E.
-3. **Draft the first technical article** from §5 ("How much does temporal
-   reasoning actually help, and why didn't a smarter router?").
+3. ~~Draft the first technical article~~ → **done:**
+   [_How much does temporal reasoning actually help — and why didn't a smarter
+   router?_](articles/01-does-temporal-reasoning-help.md).
 4. Only then consider TypedMem changes — driven by gaps this analysis exposes
    (ranking for the hard categories; adopting the global fallback), not by
    proactive feature-building.

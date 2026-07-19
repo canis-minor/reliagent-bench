@@ -76,6 +76,7 @@ Oracle-gap validation, and versioned run history under [`analysis/`](analysis/).
 Results are **preliminary**. **Specification:** [`docs/benchmark.md`](docs/benchmark.md)
 (+ [`metrics.md`](docs/metrics.md), [`annotation.md`](docs/annotation.md)).
 **Research notes / first-cycle analysis:** [`docs/research-notes.md`](docs/research-notes.md).
+**Article:** [_How much does temporal reasoning actually help — and why didn't a smarter router?_](docs/articles/01-does-temporal-reasoning-help.md).
 Track details: [`src/reliagent_bench/memory/README.md`](src/reliagent_bench/memory/README.md).
 
 ```bash
