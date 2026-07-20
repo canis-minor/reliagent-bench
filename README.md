@@ -4,6 +4,9 @@
 
 **A reproducible reliability benchmark for long-running, tool-using, memory-enabled agents.**
 
+> **Boundary.** ReliAgent Bench evaluates persistent agent representations. It does not
+> prescribe any particular representation.
+
 ![status: experimental](https://img.shields.io/badge/status-experimental-orange)
 
 > Siblings in the RLRA stack —
